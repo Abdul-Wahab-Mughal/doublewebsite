@@ -1,4 +1,5 @@
 import React from "react";
+import card from "../../assets/four_card_1.webp";
 
 export default function TextImage() {
   return (
@@ -15,17 +16,13 @@ export default function TextImage() {
         <div className="w-full lg:w-[60%] flex gap-5">
           <div className="lg:flex-4 flex items-end w-full">
             <img
-              src="/src/assets/four_card_1.webp"
+              src={card}
               alt=""
               className="w-full rounded-bl-[50px] rounded-tr-[50px] aspect-square"
             />
           </div>
           <div className="lg:flex-5 w-full">
-            <img
-              src="/src/assets/four_card_1.webp"
-              alt=""
-              className="w-full aspect-square"
-            />
+            <img src={card} alt="" className="w-full aspect-square" />
           </div>
         </div>
       </section>

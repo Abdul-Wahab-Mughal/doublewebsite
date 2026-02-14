@@ -1,5 +1,6 @@
 import { Eye } from "lucide-react";
 import React from "react";
+import card from "../../assets/four_card_1.webp";
 
 export default function FourCard() {
   return (
@@ -8,11 +9,7 @@ export default function FourCard() {
         <div className="w-1/2 lg:flex-1 flex items-end p-5">
           <div className="text-start flex flex-col gap-3">
             <div className="lg:pb-[150%] relative rounded-full overflow-hidden group">
-              <img
-                src="/src/assets/four_card_1.webp"
-                alt=""
-                className=" lg:absolute h-full"
-              />
+              <img src={card} alt="" className=" lg:absolute h-full" />
               <div className=" absolute top-0 right-0 z-10 w-full h-full bg-black/30 group-hover:flex! justify-center items-center hidden cursor-pointer">
                 <Eye size={30} />
               </div>
@@ -28,7 +25,7 @@ export default function FourCard() {
         <div className="w-1/2 lg:flex-3 p-5">
           <div className="text-start flex flex-col gap-3">
             <div className=" relative rounded-bl-[125px] rounded-tr-[125px] overflow-hidden group">
-              <img src="/src/assets/four_card_1.webp" alt="" className="w-full" />
+              <img src={card} alt="" className="w-full" />
               <div className=" absolute top-0 right-0 z-10 w-full h-full bg-black/30 group-hover:flex! justify-center items-center hidden cursor-pointer">
                 <Eye size={30} />
               </div>
@@ -44,11 +41,7 @@ export default function FourCard() {
         <div className="w-1/2 lg:flex-2 flex items-center p-5">
           <div className="text-start flex flex-col gap-3">
             <div className=" relative rounded-bl-[125px] rounded-tr-[125px] overflow-hidden lg:rounded-none group">
-              <img
-                src="/src/assets/four_card_1.webp"
-                alt=""
-                className=" lg:aspect-square"
-              />
+              <img src={card} alt="" className=" lg:aspect-square" />
               <div className=" absolute top-0 right-0 z-10 w-full h-full bg-black/30 group-hover:flex! justify-center items-center hidden cursor-pointer">
                 <Eye size={30} />
               </div>
@@ -64,11 +57,7 @@ export default function FourCard() {
         <div className="w-1/2 lg:flex-1 p-5">
           <div className="text-start flex flex-col gap-3">
             <div className="lg:pb-[150%] relative  rounded-full group overflow-hidden">
-              <img
-                src="/src/assets/four_card_1.webp"
-                alt=""
-                className="lg:absolute h-full"
-              />
+              <img src={card} alt="" className="lg:absolute h-full" />
               <div className=" absolute top-0 right-0 z-10 w-full h-full bg-black/30 group-hover:flex! justify-center items-center hidden cursor-pointer">
                 <Eye size={30} />
               </div>
