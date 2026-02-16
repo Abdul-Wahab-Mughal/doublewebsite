@@ -4,10 +4,14 @@ import Silder from "../components/section/Silder";
 import FourCard from "../components/section/FourCard";
 import TextImage from "../components/section/TextImage";
 import RightBannar from "../components/section/RightBannar";
+import RightMarquee from "../components/section/RightMarquee";
+import RightCategoriesList from "../components/section/RightCategoriesList";
+import RightImageBannar from "../components/section/RightImageBannar";
+import RightCountDown from "../components/section/RightCountDown";
 
 export default function Home() {
-  const [left, setLeft] = useState(true);
-  const [right, setRight] = useState(false);
+  const [left, setLeft] = useState(false);
+  const [right, setRight] = useState(true);
 
   const handlerHeaderLeft = () => {
     setRight(false);
@@ -45,7 +49,7 @@ export default function Home() {
       </header>
       {/* Left */}
       {left && (
-        <div id="lefthome" className=" h-screen w-full">
+        <div id="lefthome" className="">
           <Silder />
           <FourCard />
           <TextImage />
@@ -53,8 +57,12 @@ export default function Home() {
       )}
       {/* Right */}
       {right && (
-        <div id="righthome" className="bg-gray-500 w-screen h-screen">
+        <div id="righthome" className="bg-white">
           <RightBannar />
+          <RightMarquee />
+          <RightCategoriesList />
+          <RightImageBannar />
+          <RightCountDown />
         </div>
       )}
     </>

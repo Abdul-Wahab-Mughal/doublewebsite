@@ -14,11 +14,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/h" element={<RightHome />} /> */}
-          {/* <Route path="/Service" element={<Service />} /> */}
-          {/* <Route path="/Partnerships" element={<Partnerships />} /> */}
-          {/* <Route path="/Reviews" element={<ReviewsResults />} /> */}
-          {/* <Route path="/About" element={<About />} /> */}
-          {/* <Route path="/Contact" element={<Contact />} /> */}
           {/*  */}
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>

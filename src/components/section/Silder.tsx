@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { MoveLeft, MoveRight } from "lucide-react";
@@ -33,7 +33,7 @@ export default function Silder() {
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
             <div className="max-w-150 flex flex-col items-start gap-10 px-16">
-              <div className="text-4xl text-start">
+              <div className="text-5xl text-start">
                 Excellence for Every Room
               </div>
               <p className="text-start">
@@ -47,9 +47,9 @@ export default function Silder() {
         <SwiperSlide key="2" className="h-screen! relative">
           <img src={table} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
-          <div className=" absolute top-0 left-0 w-full h-full z-20 flex justify-center items-center">
+          <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
             <div className="max-w-150 flex flex-col items-start gap-10 px-16">
-              <div className="text-4xl text-start">Upgrade Your Space</div>
+              <div className="text-5xl text-start">Upgrade Your Space</div>
               <p className="text-start">
                 Discover exclusive discounts on enduring furniture designs – up
                 to 40% off curated collections. Free delivery over €500. Limited
@@ -61,9 +61,9 @@ export default function Silder() {
         <SwiperSlide key="3" className="h-screen! relative">
           <img src={table} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
-          <div className=" absolute top-0 left-0 w-full h-full z-20 flex justify-center items-center">
+          <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
             <div className="max-w-150 flex flex-col items-start gap-10 px-16">
-              <div className="text-4xl text-start">Grafted</div>
+              <div className="text-6xl text-start">Grafted</div>
               <p className="text-start">Luxury Furniture</p>
             </div>
           </div>
