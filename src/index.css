@@ -60,6 +60,9 @@ body {
     transform: translate(0%);
   }
 }
+.swiper-pagination-bullet-active {
+  background-color: black;
+}
 
 /*  */
 /*  */

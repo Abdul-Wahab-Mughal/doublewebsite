@@ -5,7 +5,7 @@ export default function RightBannar() {
   return (
     <>
       <section className="bg-white text-black h-screen flex flex-col">
-        <div className=" h-1/2 p-16 flex flex-col justify-center gap-5">
+        <div className=" h-1/2 p-4 md:p-16 flex flex-col justify-center gap-5">
           <div className="text-5xl font-semibold pt-10 uppercase">
             Desgin Dream Spaces
           </div>

@@ -31,7 +31,7 @@ export default function RightCountDown() {
   }, []);
 
   return (
-    <section className="relative py-8 overflow-hidden text-white">
+    <section className="relative px-16 md:px-24 py-8 overflow-hidden text-white">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -43,21 +43,22 @@ export default function RightCountDown() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto text-center flex justify-between">
-        <div className=" space-y-5">
+      <div className="relative z-10 container mx-auto text-center flex max-md:flex-wrap gap-5 justify-between">
+        <div className=" space-y-5 max-md:m-auto">
           <div>
-            <h2 className="text-3xl uppercase">Sleek Spaces,</h2>
-            <h2 className="text-3xl uppercase"> Exclusive Savings</h2>
+            <h2 className=" max-w-72 text-3xl uppercase">
+              Sleek Spaces, Exclusive Savings
+            </h2>
           </div>
           <p className=" text-lg">Final Hours to Save Big</p>
 
-          <Button text="shop now" className="m-auto" />
+          <Button className="m-auto">shop now</Button>
         </div>
 
         {/* Countdown */}
-        <div className="flex items-center">
+        <div className="flex items-center max-md:m-auto">
           {timeLeft ? (
-            <div className="flex justify-center gap-8 text-center">
+            <div className="flex justify-center gap-4 md:gap-8 text-center">
               <TimeBlock value={timeLeft.days} label="Days" />
               <TimeBlock value={timeLeft.hours} label="Hours" />
               <TimeBlock value={timeLeft.minutes} label="Minutes" />
@@ -74,9 +75,11 @@ export default function RightCountDown() {
 
 function TimeBlock({ value, label }) {
   return (
-    <div>
-      <div className="text-5xl font-bold">{String(value).padStart(2, "0")}</div>
-      <div className="uppercase text-sm tracking-wider">{label}</div>
+    <div className="space-y-3">
+      <div className="text-3xl md:text-6xl font-bold">
+        {String(value).padStart(2, "0")}
+      </div>
+      <div className="uppercase text-xs tracking-wider">{label}</div>
     </div>
   );
 }

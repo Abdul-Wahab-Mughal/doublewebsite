@@ -52,17 +52,31 @@ export default function RightCategoriesList() {
         <Swiper
           effect={"coverflow"}
           grabCursor
-          slidesPerView={7}
+          slidesPerView={1}
           spaceBetween={20}
           pagination
           navigation
+          breakpoints={{
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 5,
+            },
+            1024: {
+              slidesPerView: 7,
+            },
+          }}
           modules={[Pagination, Navigation]}
           className="mySwiper_Cat_List pb-6!"
+          style={{
+            "--swiper-pagination-color": "black",
+          }}
         >
           {lists.map((list, index) => (
             <SwiperSlide
               key={index}
-              className="text-black uppercase tracking-widest"
+              className="text-black text-xs uppercase text-start tracking-widest"
             >
               <img
                 src={list.image}
