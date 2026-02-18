@@ -51,7 +51,7 @@ export default function RightVideoBanner() {
   return (
     <section ref={sectionRef} className="relative w-full h-[250vh]">
       <div className="sticky top-0 h-screen">
-        <div ref={videoRef} className=" h-full flex items-end  overflow-hidden">
+        <div ref={videoRef} className=" h-full flex items-end overflow-hidden">
           {/* Video */}
           <video
             autoPlay
@@ -72,7 +72,7 @@ export default function RightVideoBanner() {
           {/* Content */}
           <div
             ref={contentRef}
-            className="relative z-10 text-start text-white px-6 duration-500 w-full flex justify-between items-center mb-10"
+            className="relative z-10 text-start text-white px-6 duration-500 w-full flex max-md:flex-col justify-between md:items-center mb-10"
           >
             <div>
               <h2 className="text-xl md:text-2xl font-bold">

@@ -8,10 +8,12 @@ export default function RightProductListSlide({
   subititle,
   collectionsData,
 }) {
-  const [activeCategory, setActiveCategory] = useState("chairs");
+  const [activeCategory, setActiveCategory] = useState(
+    Object.keys(collectionsData)[0]
+  );
 
   return (
-    <section className="pb-5 md:py-10">
+    <section className="py-5 md:py-10">
       <div className=" mx-auto px-6">
         {/* Header */}
         <div className="flex max-md:flex-col md:items-end justify-between mb-6 text-black">
@@ -63,7 +65,13 @@ export default function RightProductListSlide({
               "--swiper-pagination-color": "black",
             }}
           >
-            {collectionsData[activeCategory]?.map((list, index) => (
+            {[
+              ...collectionsData[activeCategory],
+              ...collectionsData[activeCategory],
+              ...collectionsData[activeCategory],
+              ...collectionsData[activeCategory],
+              ...collectionsData[activeCategory],
+            ]?.map((list, index) => (
               <SwiperSlide
                 key={index}
                 className="text-black space-y-2.5 group cursor-pointer"
@@ -84,7 +92,7 @@ export default function RightProductListSlide({
                   </div>
                 </div>
                 <div className="">
-                  <div className=" text-sm font-bold flex justify-between">
+                  <div className=" text-sm font-bold flex justify-between capitalize">
                     {list.label}
                     {list.pricecompare && (
                       <span className="text-red-500">Sale</span>
@@ -97,9 +105,11 @@ export default function RightProductListSlide({
                         {list?.pricecompare}
                       </span>
                     </span>
-                    <span className="text-gray-500">
-                      + {list.colors?.length} Colours
-                    </span>
+                    {list.colors?.length && (
+                      <span className="text-gray-500">
+                        + {list.colors?.length} Colours
+                      </span>
+                    )}
                   </div>
                 </div>
               </SwiperSlide>

@@ -79,7 +79,7 @@ export default function RightContentBannar() {
       ref={sectionRef}
       className="relative h-screen bg-black overflow-hidden"
     >
-      <div className="sticky top-0 h-screen flex items-center justify-center">
+      <div className="sticky top-0 h-screen flex items-center px-6 md:px-16">
         {/* Image */}
         <img
           //   ref={imageRef}
@@ -99,7 +99,7 @@ export default function RightContentBannar() {
           ref={textRef}
           className="relative z-10 text-white max-w-3xl px-6 text-left"
         >
-          <h2 className="text-4xl md:text-3xl font-bold leading-tight">
+          <h2 className="text-xl md:text-3xl leading-tight">
             {text.split(" ").map((word, i) => (
               <span key={i} className="letter inline-block mr-2 opacity-20">
                 {word}
@@ -108,8 +108,8 @@ export default function RightContentBannar() {
           </h2>
 
           <a
-            href="/pages/about"
-            className="mt-6 inline-block border border-white px-6 py-3 hover:bg-white hover:text-black transition"
+            href="#"
+            className="mt-6 inline-block border-b border-white py-1 transition uppercase"
           >
             Our Story
           </a>
