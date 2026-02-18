@@ -1,6 +1,6 @@
 import { ChevronRightIcon } from "lucide-react";
 import React from "react";
-import Button from "../ui/Button";
+import Button from "../../ui/Button";
 
 export default function RightImageBannar() {
   return (

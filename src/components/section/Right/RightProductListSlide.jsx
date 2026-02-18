@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../ui/Button";
+import Button from "../../ui/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -92,7 +92,7 @@ export default function RightProductListSlide({
                   </div>
                 </div>
                 <div className="">
-                  <div className=" text-sm font-bold flex justify-between capitalize">
+                  <div className=" text-sm font-bold flex justify-between capitalize text-start">
                     {list.label}
                     {list.pricecompare && (
                       <span className="text-red-500">Sale</span>

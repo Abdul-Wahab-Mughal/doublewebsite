@@ -21,6 +21,10 @@
   --rightbackground: #f6f6f6;
 }
 
+.font-script {
+  font-family: "Pinyon Script", cursive;
+}
+
 body {
   margin: 0;
   display: flex;

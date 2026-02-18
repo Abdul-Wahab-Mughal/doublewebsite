@@ -6,7 +6,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function RightContentBannar() {
   const sectionRef = useRef(null);
-  const imageRef = useRef(null);
   const overlayRef = useRef(null);
   const textRef = useRef(null);
 
@@ -20,21 +19,6 @@ export default function RightContentBannar() {
         pin: true,
         scrub: true,
       });
-
-      // Image Zoom
-      gsap.fromTo(
-        imageRef.current,
-        { scale: 1.2 },
-        {
-          scale: 1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
-      );
 
       // Overlay Fade
       gsap.fromTo(
@@ -82,7 +66,6 @@ export default function RightContentBannar() {
       <div className="sticky top-0 h-screen flex items-center px-6 md:px-16">
         {/* Image */}
         <img
-          //   ref={imageRef}
           src="https://mart-harmonia.myshopify.com/cdn/shop/files/about_image_5.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import reactLogo from "../assets/react.svg";
-import Silder from "../components/section/Silder";
-import FourCard from "../components/section/FourCard";
-import TextImage from "../components/section/TextImage";
-import RightBannar from "../components/section/RightBannar";
-import RightMarquee from "../components/section/RightMarquee";
-import RightCategoriesList from "../components/section/RightCategoriesList";
-import RightImageBannar from "../components/section/RightImageBannar";
-import RightCountDown from "../components/section/RightCountDown";
-import RightCollectionBox from "../components/section/RightCollectionBox";
-import RightProductListSlide from "../components/section/RightProductListSlide";
-import RightVideoBanner from "../components/section/RightVideoBanner";
-import RightContentBannar from "../components/section/RightContentBannar";
+import Silder from "../components/section/Left/Silder";
+import FourCard from "../components/section/Left/FourCard";
+import TextImage from "../components/section/Left/TextImage";
+import RightBannar from "../components/section/Right/RightBannar";
+import RightMarquee from "../components/section/Right/RightMarquee";
+import RightCategoriesList from "../components/section/Right/RightCategoriesList";
+import RightImageBannar from "../components/section/Right/RightImageBannar";
+import RightCountDown from "../components/section/Right/RightCountDown";
+import RightCollectionBox from "../components/section/Right/RightCollectionBox";
+import RightProductListSlide from "../components/section/Right/RightProductListSlide";
+import RightVideoBanner from "../components/section/Right/RightVideoBanner";
+import RightContentBannar from "../components/section/Right/RightContentBannar";
+import ProductList from "../components/section/Left/ProductList";
+import TwoImage from "../components/section/Left/TwoImage";
+import FooterBannar from "../components/section/Left/FooterBannar";
 
 const chairsLists = [
   {
@@ -115,14 +118,11 @@ const accessoriesLists = [
 
 export default function Home() {
   const [left, setLeft] = useState(true);
-  const [right, setRight] = useState(false);
 
   const handlerHeaderLeft = () => {
-    setRight(false);
     setLeft(true);
   };
   const handlerHeaderRight = () => {
-    setRight(true);
     setLeft(false);
   };
   return (
@@ -153,14 +153,20 @@ export default function Home() {
       </header>
       {/* Left */}
       {left && (
-        <div id="lefthome" className="">
+        <div id="lefthome" className="bg-white">
           <Silder />
           <FourCard />
+          <ProductList
+            collectionsData={{ onsale: chairsLists, bestsellers: storageLists }}
+          />
           <TextImage />
+          <TwoImage />
+          {/*  */}
+          <FooterBannar />
         </div>
       )}
       {/* Right */}
-      {right && (
+      {!left && (
         <div id="righthome" className="bg-white">
           <RightBannar />
           <RightMarquee />

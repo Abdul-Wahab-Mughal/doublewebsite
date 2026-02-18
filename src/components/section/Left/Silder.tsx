@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { MoveLeft, MoveRight } from "lucide-react";
-import table from "../../assets/table.webp";
+import tables from "../../../assets/table.webp";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -29,7 +29,7 @@ export default function Silder() {
         }}
       >
         <SwiperSlide key="1" className="h-screen! relative">
-          <img src={table} alt="" className="w-full h-full object-cover" />
+          <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
             <div className="max-w-150 flex flex-col items-start gap-10 px-16">
@@ -45,7 +45,7 @@ export default function Silder() {
           </div>
         </SwiperSlide>
         <SwiperSlide key="2" className="h-screen! relative">
-          <img src={table} alt="" className="w-full h-full object-cover" />
+          <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
             <div className="max-w-150 flex flex-col items-start gap-10 px-16">
@@ -59,7 +59,7 @@ export default function Silder() {
           </div>
         </SwiperSlide>
         <SwiperSlide key="3" className="h-screen! relative">
-          <img src={table} alt="" className="w-full h-full object-cover" />
+          <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
             <div className="max-w-150 flex flex-col items-start gap-10 px-16">
