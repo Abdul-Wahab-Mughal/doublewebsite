@@ -114,8 +114,8 @@ const accessoriesLists = [
 ];
 
 export default function Home() {
-  const [left, setLeft] = useState(false);
-  const [right, setRight] = useState(true);
+  const [left, setLeft] = useState(true);
+  const [right, setRight] = useState(false);
 
   const handlerHeaderLeft = () => {
     setRight(false);
