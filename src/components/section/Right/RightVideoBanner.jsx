@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../../ui/Button";
@@ -10,7 +10,7 @@ export default function RightVideoBanner() {
   const videoRef = useRef(null);
   const contentRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // Video scale animation (better than width)
       gsap.fromTo(
@@ -21,9 +21,10 @@ export default function RightVideoBanner() {
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top-=140 top",
+            start: "top top",
             end: "+=1050",
             scrub: true,
+            markers: true,
           },
         }
       );
@@ -43,7 +44,7 @@ export default function RightVideoBanner() {
           },
         }
       );
-    });
+    }, sectionRef);
 
     return () => ctx.revert(); // ✅ cleanup
   }, []);

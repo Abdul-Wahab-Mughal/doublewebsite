@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,7 +9,7 @@ export default function RightContentBannar() {
   const overlayRef = useRef(null);
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // Pin Section
       ScrollTrigger.create({
@@ -50,7 +50,7 @@ export default function RightContentBannar() {
           },
         }
       );
-    });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
