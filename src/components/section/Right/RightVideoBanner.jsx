@@ -11,42 +11,49 @@ export default function RightVideoBanner() {
   const contentRef = useRef(null);
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // Video scale animation (better than width)
-      gsap.fromTo(
-        videoRef.current,
-        { scale: 0.6 },
-        {
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "+=1050",
-            scrub: true,
-            markers: true,
-          },
-        }
-      );
+    let ctx;
+    const timer = setTimeout(() => {
+      ctx = gsap.context(() => {
+        // Video scale animation (better than width)
+        gsap.fromTo(
+          videoRef.current,
+          { scale: 0.6 },
+          {
+            scale: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "+=1050",
+              scrub: true,
+              // markers: true,
+            },
+          }
+        );
 
-      // Text animation
-      gsap.fromTo(
-        contentRef.current,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "+=900 top",
-            end: "+=900 top",
-            scrub: true,
-          },
-        }
-      );
-    }, sectionRef);
+        // Text animation
+        gsap.fromTo(
+          contentRef.current,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "+=900 top",
+              end: "+=900 top",
+              scrub: true,
+            },
+          }
+        );
 
-    return () => ctx.revert(); // ✅ cleanup
+        ScrollTrigger.refresh();
+      }, sectionRef);
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+      if (ctx) ctx.revert(); // ✅ cleanup
+    };
   }, []);
 
   return (

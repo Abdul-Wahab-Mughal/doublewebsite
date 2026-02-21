@@ -10,49 +10,55 @@ export default function RightContentBannar() {
   const textRef = useRef(null);
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // Pin Section
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=100%",
-        pin: true,
-        scrub: true,
-      });
+    let ctx;
+    const timer = setTimeout(() => {
+      ctx = gsap.context(() => {
+        // Pin Section
+        ScrollTrigger.create({
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=100%",
+          pin: true,
+          scrub: true,
+        });
 
-      // Overlay Fade
-      gsap.fromTo(
-        overlayRef.current,
-        { opacity: 0.6 },
-        {
-          opacity: 0.2,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
-      );
+        // Overlay Fade
+        gsap.fromTo(
+          overlayRef.current,
+          { opacity: 0.6 },
+          {
+            opacity: 0.2,
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
 
-      // Letter Animation
-      gsap.fromTo(
-        textRef.current.querySelectorAll(".letter"),
-        { opacity: 0.2 },
-        {
-          opacity: 1,
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
+        // Letter Animation
+        gsap.fromTo(
+          textRef.current.querySelectorAll(".letter"),
+          { opacity: 0.2 },
+          {
+            opacity: 1,
+            stagger: 0.05,
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+        ScrollTrigger.refresh();
+      }, sectionRef);
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+      if (ctx) ctx.revert(); // ✅ cleanup
+    };
   }, []);
 
   const text =
