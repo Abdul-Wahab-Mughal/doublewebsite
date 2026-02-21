@@ -3,7 +3,7 @@ import React from "react";
 export default function TwoImage() {
   return (
     <section className=" flex max-md:flex-col lg:py-10 overflow-hidden">
-      <div className="w-[62.5%] h-96 relative group overflow-hidden cursor-pointer">
+      <div className="md:w-[62.5%] h-96 relative group overflow-hidden cursor-pointer">
         <img
           src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/bookcase-cosmo-3d-3or-fix-4_1a0c3c68-420f-40e4-b769-817c65fbbf78_1200x.jpg?v=1748866654"
           alt=""
@@ -15,7 +15,7 @@ export default function TwoImage() {
           <div className=" uppercase text-3xl">Explore our world</div>
         </div>
       </div>
-      <div className="w-[37.5%] h-96 relative group overflow-hidden cursor-pointer">
+      <div className="md:w-[37.5%] h-96 relative group overflow-hidden cursor-pointer">
         <img
           src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_11_dining-table-curves-black-plus-chair-trapezium-sfeer-2_720x.jpg?v=1749029713"
           alt=""

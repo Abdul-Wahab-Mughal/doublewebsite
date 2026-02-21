@@ -75,7 +75,7 @@ export default function ProductList({ collectionsData }) {
         <Swiper
           effect={"coverflow"}
           grabCursor
-          slidesPerView={1}
+          slidesPerView={2}
           spaceBetween={20}
           pagination
           navigation

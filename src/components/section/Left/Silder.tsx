@@ -32,7 +32,7 @@ export default function Silder() {
           <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
-            <div className="max-w-150 flex flex-col items-start gap-10 px-16">
+            <div className="max-w-150 flex flex-col items-start gap-10 px-5 md:px-16">
               <div className="text-5xl text-start">
                 Excellence for Every Room
               </div>
@@ -48,7 +48,7 @@ export default function Silder() {
           <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
-            <div className="max-w-150 flex flex-col items-start gap-10 px-16">
+            <div className="max-w-150 flex flex-col items-start gap-10 px-5 md:px-16">
               <div className="text-5xl text-start">Upgrade Your Space</div>
               <p className="text-start">
                 Discover exclusive discounts on enduring furniture designs – up
@@ -62,7 +62,7 @@ export default function Silder() {
           <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
-            <div className="max-w-150 flex flex-col items-start gap-10 px-16">
+            <div className="max-w-150 flex flex-col items-start gap-10 px-5 md:px-16">
               <div className="text-6xl text-start">Grafted</div>
               <p className="text-start">Luxury Furniture</p>
             </div>
@@ -70,18 +70,20 @@ export default function Silder() {
         </SwiperSlide>
       </Swiper>
       {/* Custom buttons */}
-      <div className="absolute bottom-10 left-20 z-30 flex gap-3">
-        <span> {String(current).padStart(2, "0")}</span>
-        <button className="prev-btn cursor-pointer">
-          <MoveLeft size={20} className="text-white" />
-        </button>
-        <button className="next-btn cursor-pointer">
-          <MoveRight size={20} className="text-white" />
-        </button>
-        <span>{String(totalSlides).padStart(2, "0")}</span>
+      <div className="absolute bottom-10 md:left-20 z-30 max-md:w-full">
+        <div className=" flex gap-3 justify-center">
+          <span> {String(current).padStart(2, "0")}</span>
+          <button className="prev-btn cursor-pointer">
+            <MoveLeft size={20} className="text-white" />
+          </button>
+          <button className="next-btn cursor-pointer">
+            <MoveRight size={20} className="text-white" />
+          </button>
+          <span>{String(totalSlides).padStart(2, "0")}</span>
+        </div>
       </div>
       {/* Custom container */}
-      <div className="flex justify-center absolute bottom-12 w-full">
+      <div className="flex justify-center absolute bottom-5 md:bottom-12 w-full">
         <div className="custom-pagination flex justify-center z-30 w-fit"></div>
       </div>
     </section>

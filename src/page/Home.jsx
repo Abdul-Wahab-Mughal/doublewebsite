@@ -15,6 +15,7 @@ import RightContentBannar from "../components/section/Right/RightContentBannar";
 import ProductList from "../components/section/Left/ProductList";
 import TwoImage from "../components/section/Left/TwoImage";
 import FooterBannar from "../components/section/Left/FooterBannar";
+import Header from "../components/Header";
 
 const chairsLists = [
   {
@@ -119,38 +120,10 @@ const accessoriesLists = [
 export default function Home() {
   const [left, setLeft] = useState(true);
 
-  const handlerHeaderLeft = () => {
-    setLeft(true);
-  };
-  const handlerHeaderRight = () => {
-    setLeft(false);
-  };
   return (
     <>
       {/* Header */}
-      <header className="w-full absolute top-0 left-0 z-50">
-        <div className="relative w-full flex items-center justify-between overflow-hidden">
-          {/* Right */}
-          <button
-            className="h-full w-32 md:w-[25%] p-3 relative flex flex-col items-center cursor-pointer rounded-br-4xl bg-black/50"
-            title="Right click to enter Studio One"
-            onClick={() => handlerHeaderLeft()}
-          >
-            <img src={reactLogo} alt="" />
-            Left Home
-          </button>
-
-          {/* Left */}
-          <button
-            className="h-full w-32 md:w-[25%] p-3 relative flex flex-col items-center cursor-pointer rounded-bl-4xl bg-black/50"
-            title="Right click to enter Studio One"
-            onClick={() => handlerHeaderRight()}
-          >
-            <img src={reactLogo} alt="" />
-            Right Home
-          </button>
-        </div>
-      </header>
+      <Header left={left} setLeft={setLeft} />
       {/* Left */}
       {left && (
         <div id="lefthome" className="bg-white">
