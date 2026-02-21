@@ -16,6 +16,7 @@ import ProductList from "../components/section/Left/ProductList";
 import TwoImage from "../components/section/Left/TwoImage";
 import FooterBannar from "../components/section/Left/FooterBannar";
 import Header from "../components/Header";
+import BestSellerTab from "../components/section/Left/BestSellerTab";
 
 const chairsLists = [
   {
@@ -24,8 +25,8 @@ const chairsLists = [
     hoverimage:
       "https://mart-harmonia.myshopify.com/cdn/shop/files/barstool2color1hover.png?v=1747252471&width=940",
     label: "Upholstered Modern Bar Stool",
-    price: "$190.00",
-    pricecompare: "$299.00",
+    price: "€190.00",
+    pricecompare: "€299.00",
     colors: ["red", "orange", "black"],
   },
 ];
@@ -37,8 +38,8 @@ const tableLists = [
     hoverimage:
       "https://mart-harmonia.myshopify.com/cdn/shop/files/diningtable4hover1.png?v=1747297114&width=940",
     label: "Upholstered Modern Bar Stool",
-    price: "$855.00",
-    pricecompare: "$999.00",
+    price: "€855.00",
+    pricecompare: "€999.00",
     colors: ["red", "orange", "black"],
   },
 ];
@@ -50,8 +51,8 @@ const lightingLists = [
     hoverimage:
       "https://mart-harmonia.myshopify.com/cdn/shop/files/floorlamp1color1hover.png?v=1747246376&width=940",
     label: "Arc floor lamp",
-    price: "$855.00",
-    pricecompare: "$999.00",
+    price: "€855.00",
+    pricecompare: "€999.00",
     colors: ["red", "orange", "black"],
   },
 ];
@@ -63,8 +64,8 @@ const storageLists = [
     hoverimage:
       "https://mart-harmonia.myshopify.com/cdn/shop/files/shelves4color1hover.png?v=1747340615&width=940",
     label: "Arc floor lamp",
-    price: "$855.00",
-    pricecompare: "$999.00",
+    price: "€855.00",
+    pricecompare: "€999.00",
     colors: ["red", "orange", "black"],
   },
 ];
@@ -76,8 +77,8 @@ const favoritesLists = [
     hoverimage:
       "https://mart-harmonia.myshopify.com/cdn/shop/files/diningchairs5color1hover.png?v=1747251927&width=940",
     label: "Upholstered dininh=g aremchair",
-    price: "$210.00",
-    pricecompare: "$499.00",
+    price: "€210.00",
+    pricecompare: "€499.00",
     colors: ["red", "orange", "black"],
   },
 ];
@@ -89,7 +90,7 @@ const trendingLists = [
     hoverimage:
       "https://mart-harmonia.myshopify.com/cdn/shop/files/diningchairs4color2.png?v=1747251838&width=940",
     label: "Classic Wooden Dining Chair",
-    price: "$210.00",
+    price: "€210.00",
   },
 ];
 
@@ -100,8 +101,8 @@ const workspaceLists = [
     hoverimage:
       "https://mart-harmonia.myshopify.com/cdn/shop/files/floorlamp1color1hover.png?v=1747246376&width=940",
     label: "Arc floor lamp",
-    price: "$855.00",
-    pricecompare: "$999.00",
+    price: "€855.00",
+    pricecompare: "€999.00",
     colors: ["red", "orange", "black"],
   },
 ];
@@ -113,7 +114,7 @@ const accessoriesLists = [
     hoverimage:
       "https://mart-harmonia.myshopify.com/cdn/shop/files/diningchairs4color2.png?v=1747251838&width=940",
     label: "Classic Wooden Dining Chair",
-    price: "$210.00",
+    price: "€210.00",
   },
 ];
 
@@ -126,15 +127,15 @@ export default function Home() {
       <Header left={left} setLeft={setLeft} />
       {/* Left */}
       {left && (
-        <div id="lefthome" className="bg-white">
+        <div id="lefthome" className="bg-[#FBFBFB]">
           <Silder />
           <FourCard />
           <ProductList
             collectionsData={{ onsale: chairsLists, bestsellers: storageLists }}
           />
           <TextImage />
+          <BestSellerTab />
           <TwoImage />
-          {/*  */}
           <FooterBannar />
         </div>
       )}

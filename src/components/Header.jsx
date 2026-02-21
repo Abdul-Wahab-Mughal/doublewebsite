@@ -15,7 +15,7 @@ export default function Header({ left, setLeft }) {
         <div className="relative w-full flex items-center justify-between overflow-hidden p-2.5">
           {/* Right */}
           <button
-            className="h-full w-36 md:w-96 p-5 flex flex-wrap justify-center gap-2.5 items-center cursor-pointer rounded-2xl bg-gray-700 hover:bg-gray-800"
+            className="h-full w-36 md:w-64 lg:w-96 p-5 flex flex-wrap justify-center gap-2.5 items-center cursor-pointer rounded-2xl bg-gray-700 hover:bg-gray-800"
             title="Left click"
             onClick={() => handlerHeaderLeft()}
           >
@@ -25,7 +25,7 @@ export default function Header({ left, setLeft }) {
 
           {/* Left */}
           <button
-            className="h-full w-36 md:w-96 p-5 flex flex-wrap justify-center gap-2.5 items-center cursor-pointer rounded-2xl bg-gray-700 hover:bg-gray-800"
+            className="h-full w-36 md:w-64 lg::w-96 p-5 flex flex-wrap justify-center gap-2.5 items-center cursor-pointer rounded-2xl bg-gray-700 hover:bg-gray-800"
             title="Right click"
             onClick={() => handlerHeaderRight()}
           >

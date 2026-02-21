@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import card from "../../../assets/four_card_1.webp";
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Eye } from "lucide-react";
 import EyeView from "../../ui/EyeView";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +34,7 @@ export default function TextImage() {
     <>
       <section
         ref={ref}
-        className="bg-white flex max-lg:flex-wrap p-5 lg:p-16 gap-5 overflow-hidden"
+        className=" flex max-lg:flex-wrap p-5 lg:p-16 gap-5 overflow-hidden"
       >
         <div className="w-full lg:w-[40%] text-black text-start flex flex-col gap-3 lg:pr-20 lg:pt-7">
           <div className="text-4xl font-script">Made by Deco</div>

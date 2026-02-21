@@ -1,4 +1,3 @@
-import { Eye } from "lucide-react";
 import React, { useEffect, useRef } from "react";
 import card from "../../../assets/four_card_1.webp";
 import gsap from "gsap";
@@ -36,13 +35,17 @@ export default function FourCard() {
     <>
       <section
         ref={ref}
-        className=" flex max-lg:flex-wrap gap-y-5 bg-white p-5 lg:p-16 overflow-hidden"
+        className=" flex max-lg:flex-wrap gap-y-5 p-5 lg:p-16 overflow-hidden"
       >
         <div className="fourcard w-1/2 h-full md:h-fit md:mt-auto lg:flex-1 flex items-end pr-2.5 md:p-2.5">
           <div className="text-start flex flex-col gap-3 w-full h-full">
-            <div className="lg:pb-[150%] relative rounded-full overflow-hidden group">
-              <img src={card} alt="" className=" lg:absolute h-full w-full" />
-              <EyeView />
+            <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full overflow-hidden group">
+              <img
+                src={card}
+                alt=""
+                className="max-lg:aspect-square lg:absolute h-full w-full"
+              />
+              <EyeView className=" bottom-5 right-5" />
             </div>
             <div className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
               Bistro Side Table
@@ -90,13 +93,13 @@ export default function FourCard() {
         </div>
         <div className="fourcard w-1/2 lg:flex-1 pl-2.5 md:p-2.5">
           <div className="text-start flex flex-col gap-3">
-            <div className="lg:pb-[150%] relative  rounded-full group overflow-hidden">
+            <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full group overflow-hidden">
               <img
                 src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_bt-438125-cabinet-beam-small-detail.jpg?v=1747307880&width=260"
                 alt=""
-                className="lg:absolute h-full w-full"
+                className="lg:absolute h-full w-full  max-lg:aspect-square"
               />
-              <EyeView />
+              <EyeView className=" bottom-5 right-5" />
             </div>
             <div className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
               Cosmo Table Set

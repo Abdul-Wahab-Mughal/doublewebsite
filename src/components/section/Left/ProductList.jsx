@@ -36,8 +36,8 @@ export default function ProductList({ collectionsData }) {
   }, []);
 
   const getDiscount = (price, compare) => {
-    const current = parseFloat(price.replace("$", ""));
-    const original = parseFloat(compare.replace("$", ""));
+    const current = parseFloat(price.replace("€", ""));
+    const original = parseFloat(compare.replace("€", ""));
     return Math.round(((original - current) / original) * 100);
   };
 
