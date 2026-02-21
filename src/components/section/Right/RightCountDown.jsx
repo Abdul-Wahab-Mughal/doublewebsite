@@ -39,7 +39,7 @@ export default function RightCountDown() {
           alt=""
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/25" />
       </div>
 
       {/* Content */}

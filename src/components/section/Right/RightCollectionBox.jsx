@@ -1,35 +1,60 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "../../ui/Button";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const cards = [
+  {
+    title: "Seating",
+    link: "/collections/seating",
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/files/collection_13_1.jpg?v=1754033897&width=940",
+  },
+  {
+    title: "Tables",
+    link: "/collections/tables",
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/files/collection_14_1.jpg?v=1754033897&width=940",
+  },
+  {
+    title: "Chairs",
+    link: "/collections/chairs",
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/files/collection_15_1.jpg?v=1754033897&width=940",
+  },
+  {
+    title: "Lighting",
+    link: "/collections/lighting",
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/files/collection_16_1.jpg?v=1754033896&width=940",
+  },
+];
 
 export default function RightCollectionBox() {
-  const cards = [
-    {
-      title: "Seating",
-      link: "/collections/seating",
-      image:
-        "https://mart-harmonia.myshopify.com/cdn/shop/files/collection_13_1.jpg?v=1754033897&width=940",
-    },
-    {
-      title: "Tables",
-      link: "/collections/tables",
-      image:
-        "https://mart-harmonia.myshopify.com/cdn/shop/files/collection_14_1.jpg?v=1754033897&width=940",
-    },
-    {
-      title: "Chairs",
-      link: "/collections/chairs",
-      image:
-        "https://mart-harmonia.myshopify.com/cdn/shop/files/collection_15_1.jpg?v=1754033897&width=940",
-    },
-    {
-      title: "Lighting",
-      link: "/collections/lighting",
-      image:
-        "https://mart-harmonia.myshopify.com/cdn/shop/files/collection_16_1.jpg?v=1754033896&width=940",
-    },
-  ];
+  const TextRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".image_box", {
+        backgroundPosition: "50% 0%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: TextRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 5, // 👈 smooth + slow
+          // markers: true,
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="py-16">
+    <section ref={TextRef} className="py-16">
       <div className=" mx-auto px-6">
         {/* Header */}
         <div className="flex max-md:flex-col md:items-end justify-between mb-6 text-black">
@@ -47,13 +72,23 @@ export default function RightCollectionBox() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {/* Promo Banner */}
           <div className="relative md:row-span-2 col-span-2 overflow-hidden rounded-lg">
-            <img
-              src="https://mart-harmonia.myshopify.com/cdn/shop/files/banner_image_2_3.jpg?v=1754033942&width=2000"
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <div
+              className="image_box absolute w-full h-full"
+              style={{
+                backgroundImage:
+                  "url('https://mart-harmonia.myshopify.com/cdn/shop/files/banner_image_2_3.jpg?v=1754033942&width=2000')",
+                backgroundSize: "100% 150%",
+                backgroundPosition: "50% 100%",
+              }}
+            >
+              {/* <img
+                src="https://mart-harmonia.myshopify.com/cdn/shop/files/banner_image_2_3.jpg?v=1754033942&width=2000"
+                alt=""
+                className=" image_box w-full h-full object-cover"
+              /> */}
+            </div>
             <div className=" absolute inset-0 bg-black/25"></div>
-            <div className=" absolute left-0 top-0 h-full w-full p-8 py-14 md:p-14 grid">
+            <div className=" h-full w-full p-8 py-14 md:p-14 grid relative z-10">
               <h2 className=" text-5xl md:text-6xl font-semibold flex-1 mt-auto">
                 SAVE 50% TODAY
               </h2>

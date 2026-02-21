@@ -29,9 +29,40 @@ export default function FooterBannar() {
             sanctuary.
           </p>
 
-          <button className=" m-auto p-2.5 border rounded-full">
-            <div className=" w-40 h-40 border rounded-full flex justify-center items-center">
-              Explore
+          <button className=" m-auto p-2.5 border rounded-full cursor-pointer group">
+            <div className=" w-40 h-40 border rounded-full flex justify-center items-center overflow-hidden relative">
+              <span className="group-hover:text-black duration-2500">Explore</span>
+              <span className=" absolute translate-y-full group-hover:translate-y-0 duration-2500 -z-10">
+                <svg
+                  className="icon text-[#d3e3bb]"
+                  aria-hidden="true"
+                  focusable="false"
+                  width="500"
+                  height="400"
+                  viewBox="0 0 1000 1000"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                  overflow="auto"
+                  shapeRendering="auto"
+                  fill="transparent"
+                >
+                  <defs>
+                    <path
+                      id="wavepath-"
+                      d="M 0 2000 0 500 Q 117.5 439 235 500 t 235 0 235 0 235 0 235 0 235 0 235 0  v1000 z"
+                    ></path>
+                    <path id="motionpath-" d="M -470 0 0 0"></path>
+                  </defs>
+
+                  <g>
+                    <use href="#wavepath-" y="-465" fill="currentColor">
+                      <animateMotion dur="1s" repeatCount="indefinite">
+                        <mpath href="#motionpath-"></mpath>
+                      </animateMotion>
+                    </use>
+                  </g>
+                </svg>
+              </span>
             </div>
           </button>
         </div>

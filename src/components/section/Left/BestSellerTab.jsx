@@ -58,7 +58,7 @@ export default function BestSellerTab() {
                 <div
                   className={`${
                     index === activeTab ? "translate-x-0" : ""
-                  } flex items-center justify-between py-5 px-7 md:px-20 -translate-x-full duration-500`}
+                  } flex items-center justify-between py-5 px-7 md:pl-20 -translate-x-full duration-500`}
                 >
                   <div className="text-start">
                     <span className=" capitalize text-xs font-bold">
@@ -77,7 +77,7 @@ export default function BestSellerTab() {
                         </span>
                       </div>
                     ) : (
-                      <span>From ${data.price}</span>
+                      <span>From {data.price}</span>
                     )}
                   </div>
                 </div>

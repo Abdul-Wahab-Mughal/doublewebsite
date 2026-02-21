@@ -24,6 +24,18 @@ export default function RightBannar() {
           // markers: true, // remove in production
         },
       });
+
+      gsap.to("#image_ban", {
+        backgroundPosition: "50% 0%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: TextRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 4, // 👈 smooth + slow
+          // markers: true,
+        },
+      });
     });
 
     return () => ctx.revert();
@@ -33,11 +45,8 @@ export default function RightBannar() {
 
   return (
     <>
-      <section
-        ref={TextRef}
-        className="bg-white text-black h-screen flex flex-col"
-      >
-        <div className=" h-1/2 p-4 md:p-16 flex flex-col justify-center gap-5">
+      <section ref={TextRef} className="bg-white text-black flex flex-col">
+        <div className=" p-4 md:p-16 flex flex-col justify-center gap-5">
           <div className="text-5xl font-semibold pt-10 uppercase">
             {text_title.split("").map((word, i) => (
               <span key={i} className="text-item px-1">
@@ -50,8 +59,16 @@ export default function RightBannar() {
             furniture that enhances every corner of your home.
           </p>
         </div>
-        <div className=" h-1/2">
-          <img src={bannar} alt="" className="h-full w-full object-cover" />
+        <div
+          id="image_ban"
+          className="h-96"
+          style={{
+            backgroundImage:
+              "url('https://mart-harmonia.myshopify.com/cdn/shop/files/hero_image.jpg?v=1753944100&width=3600')",
+            backgroundSize: "100% 150%",
+            backgroundPosition: "50% 100%",
+          }}
+        >
         </div>
       </section>
     </>

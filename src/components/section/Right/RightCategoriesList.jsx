@@ -8,39 +8,48 @@ import "swiper/css/pagination";
 
 const lists = [
   {
-    image: "https://swiperjs.com/demos/images/nature-1.jpg",
-    label: "coffee tables",
-  },
-  {
-    image: "https://swiperjs.com/demos/images/nature-2.jpg",
-    label: "dining chairs",
-  },
-  {
-    image: "https://swiperjs.com/demos/images/nature-3.jpg",
-    label: "hall",
-  },
-  {
-    image: "https://swiperjs.com/demos/images/nature-4.jpg",
-    label: "ceiling",
-  },
-  {
-    image: "https://swiperjs.com/demos/images/nature-5.jpg",
-    label: "table lamps",
-  },
-  {
-    image: "https://swiperjs.com/demos/images/nature-6.jpg",
-    label: "vases",
-  },
-  {
-    image: "https://swiperjs.com/demos/images/nature-7.jpg",
-    label: "textiles",
-  },
-  {
-    image: "https://swiperjs.com/demos/images/nature-8.jpg",
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/classic_sofas_c61f2b43-2608-412b-b85e-8829793e82c8.png?v=1747161753&width=360",
     label: "classic sofas",
   },
   {
-    image: "https://swiperjs.com/demos/images/nature-9.jpg",
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/coffee_tables.png?v=1747208988&width=2253",
+    label: "coffee tables",
+  },
+  {
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/dining_tables.png?v=1747208901&width=360",
+    label: "dining chairs",
+  },
+  {
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/hall.png?v=1747209849&width=2253",
+    label: "hall",
+  },
+  {
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/ceiling_lights.png?v=1747209166&width=360",
+    label: "ceiling lights",
+  },
+  {
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/table_lamps.png?v=1747209212&width=360",
+    label: "table lamps",
+  },
+  {
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/vases.png?v=1747209568&width=360",
+    label: "vases",
+  },
+  {
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/textile.png?v=1747209624&width=360",
+    label: "textiles",
+  },
+  {
+    image:
+      "https://mart-harmonia.myshopify.com/cdn/shop/collections/poufs_262bd2c4-2595-40a3-97ff-173507679e5a.png?v=1747162060&width=360",
     label: "poufs",
   },
 ];
@@ -76,13 +85,14 @@ export default function RightCategoriesList() {
           {lists.map((list, index) => (
             <SwiperSlide
               key={index}
-              className="text-black text-xs uppercase text-start tracking-widest"
+              className="text-black text-xs uppercase text-start tracking-widest cursor-pointer relative group"
             >
               <img
                 src={list.image}
-                className="w-full h-full block rounded-xl"
+                className="w-full h-full block rounded-xl aspect-square"
               />
               {list.label}
+              <div className=" absolute inset-0 bg-white/50 group-hover:opacity-50 opacity-0 duration-500"></div>
             </SwiperSlide>
           ))}
         </Swiper>
