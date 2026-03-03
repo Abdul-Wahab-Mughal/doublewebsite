@@ -99,6 +99,8 @@ export default function ProductList({ collectionsData }) {
             ...collectionsData[activeCategory],
             ...collectionsData[activeCategory],
             ...collectionsData[activeCategory],
+            ...collectionsData[activeCategory],
+            ...collectionsData[activeCategory],
           ]?.map((list, index) => (
             <SwiperSlide
               key={index}

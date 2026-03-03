@@ -71,6 +71,8 @@ export default function RightProductListSlide({
               ...collectionsData[activeCategory],
               ...collectionsData[activeCategory],
               ...collectionsData[activeCategory],
+              ...collectionsData[activeCategory],
+              ...collectionsData[activeCategory],
             ]?.map((list, index) => (
               <SwiperSlide
                 key={index}

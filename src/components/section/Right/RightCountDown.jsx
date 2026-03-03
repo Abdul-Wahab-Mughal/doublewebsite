@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../../ui/Button";
 
 export default function RightCountDown() {
-  const targetDate = new Date("2026-03-01T00:00:00").getTime();
+  const targetDate = new Date("2026-05-01T00:00:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 

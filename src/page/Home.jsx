@@ -141,7 +141,7 @@ export default function Home() {
       )}
       {/* Right */}
       {!left && (
-        <div id="righthome" className="bg-white">
+        <div id="righthome" className="bg-white pt-14">
           <RightBannar />
           <RightMarquee />
           <RightCategoriesList />

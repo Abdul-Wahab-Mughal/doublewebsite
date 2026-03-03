@@ -45,7 +45,7 @@ export default function FourCard() {
                 alt=""
                 className="max-lg:aspect-square lg:absolute h-full w-full"
               />
-              <EyeView className=" bottom-5 right-5" />
+              <EyeView className=" bottom-0 right-16" />
             </div>
             <div className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
               Bistro Side Table
@@ -99,7 +99,7 @@ export default function FourCard() {
                 alt=""
                 className="lg:absolute h-full w-full  max-lg:aspect-square"
               />
-              <EyeView className=" bottom-5 right-5" />
+              <EyeView className=" bottom-0 right-16" />
             </div>
             <div className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
               Cosmo Table Set
