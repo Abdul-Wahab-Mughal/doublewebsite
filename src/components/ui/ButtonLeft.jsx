@@ -1,16 +1,18 @@
 import React from "react";
 
-export default function ButtonLeft({ title }) {
+export default function ButtonLeft({ children, className, animatColor }) {
   return (
-    <button className=" border p-2 w-fit rounded-full mt-10 group hover:border-transparent duration-2500 relative overflow-hidden cursor-pointer">
+    <button
+      className={` border p-2 w-fit rounded-full mt-10 group hover:border-transparent duration-2500 relative overflow-hidden cursor-pointer ${className}`}
+    >
       <div className=" border py-2 px-5 rounded-full text-sm group-hover:border-transparent duration-2500">
         <span className=" group-hover:text-black duration-2500 z-10 relative">
-          {title}
+          {children}
         </span>
         {/* animate */}
         <span className=" absolute left-0 translate-y-20 group-hover:-translate-y-20 duration-750">
           <svg
-            className="icon text-[#d3e3bb]"
+            className={`icon text-[#d3e3bb] ${animatColor}`}
             aria-hidden="true"
             focusable="false"
             width="500"

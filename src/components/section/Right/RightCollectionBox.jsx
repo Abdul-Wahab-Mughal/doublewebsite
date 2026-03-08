@@ -65,7 +65,7 @@ export default function RightCollectionBox() {
               your space with unbeatable savings.
             </p>
           </div>
-          <Button>Shop Sale</Button>
+          <Button animatColor="!text-[var(--btn)]">Shop Sale</Button>
         </div>
 
         {/* Grid */}

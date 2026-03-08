@@ -17,6 +17,8 @@ import TwoImage from "../components/section/Left/TwoImage";
 import FooterBannar from "../components/section/Left/FooterBannar";
 import Header from "../components/Header";
 import BestSellerTab from "../components/section/Left/BestSellerTab";
+import FollowUs from "../components/section/Left/FollowUs";
+import { Building, LucideLockKeyhole } from "lucide-react";
 
 const chairsLists = [
   {
@@ -137,6 +139,16 @@ export default function Home() {
           <BestSellerTab />
           <TwoImage />
           <FooterBannar />
+          <FollowUs />
+          <div className=" fixed bottom-5 left-1 bg-(--btn) w-fit p-2 rounded-xl z-50 h-fit">
+            <div className="flex gap-2.5 border-r-2 pr-2 border-yellow-500">
+              <div className="flex items-end">
+                <Building />
+                <LucideLockKeyhole size={10} color="yellow" />
+              </div>
+              zakelijk Inloggen
+            </div>
+          </div>
         </div>
       )}
       {/* Right */}

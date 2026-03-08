@@ -13,12 +13,14 @@ export default function Silder() {
   const totalSlides = 3;
 
   return (
-    <section className=" relative">
+    <section className=" relative max-h-250 h-full">
       <Swiper
         loop
-        className="mySwiper_home"
-        autoplay={{ delay: 2500 }}
-        modules={[Navigation, Pagination, Autoplay]}
+        className="mySwiper_home h-full"
+        // autoplay={{ delay: 2500 }}
+        modules={[Navigation, Pagination, 
+          // Autoplay
+        ]}
         navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
         pagination={{
           el: ".custom-pagination",
@@ -28,7 +30,7 @@ export default function Silder() {
           setCurrent(swiper.realIndex + 1);
         }}
       >
-        <SwiperSlide key="1" className="h-screen! relative">
+        <SwiperSlide key="1" className="h-full relative">
           <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
@@ -44,7 +46,7 @@ export default function Silder() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide key="2" className="h-screen! relative">
+        <SwiperSlide key="2" className="h-full relative">
           <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">
@@ -58,7 +60,7 @@ export default function Silder() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide key="3" className="h-screen! relative">
+        <SwiperSlide key="3" className="h-full relative">
           <img src={tables} alt="" className="w-full h-full object-cover" />
           <div className=" absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
           <div className=" absolute top-0 left-0 w-full h-full z-20 flex items-center">

@@ -1,12 +1,22 @@
 import { Eye } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import ProductBox from "./productBox";
 
-export default function EyeView({ className }) {
+export default function EyeView({ className, bgblack }) {
+  const [eyeBox, setEyeBox] = useState(false);
   return (
-    <div className=" absolute top-0 right-0 z-10 h-full w-full bg-black/30 group-hover:block! hidden cursor-pointer">
-      <div className={`${className} absolute bottom-2.5 right-2.5 bg-white p-1 rounded-full`}>
-        <Eye size={15} color="black" />
+    <>
+      <div
+        className={`${!bgblack && "bg-black/30"} absolute top-0 right-0 z-10 h-full w-full group-hover:block! hidden cursor-pointer`}
+      >
+        <div
+          className={`${className} absolute bottom-2.5 right-2.5 bg-white p-1 rounded-full hover:bg-amber-100`}
+          onClick={() => setEyeBox(true)}
+        >
+          <Eye size={20} color="black" />
+        </div>
       </div>
-    </div>
+      {eyeBox && <ProductBox onClick={() => setEyeBox(false)} />}
+    </>
   );
 }

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import EyeView from "../../ui/EyeView";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +45,7 @@ export default function ProductList({ collectionsData }) {
   return (
     <section
       ref={ref}
-      className=" flex flex-col max-lg:flex-wrap p-10 lg:p-16 overflow-hidden w-full"
+      className=" flex flex-col max-lg:flex-wrap p-10 lg:p-16 overflow-hidden w-full max_width"
     >
       <div className="text-black text-start w-full">
         <div className="text-4xl font-script">Featured Products</div>
@@ -112,13 +113,18 @@ export default function ProductList({ collectionsData }) {
                   src={list.hoverimage}
                   className="w-full h-full block rounded absolute inset-0 duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105"
                 />
+                {/* sale */}
                 {list.pricecompare && (
-                  <div className=" absolute inset-0 left-2.5 top-1">
+                  <div className=" absolute inset-0 left-2.5 top-2.5">
                     <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
                       {getDiscount(list.price, list.pricecompare)}% sale
                     </div>
                   </div>
                 )}
+                {/* Eye */}
+                <div className="">
+                  <EyeView className="bottom-auto top-2.5 " bgblack />
+                </div>
               </div>
               <div className="">
                 <div className="text-start flex gap-2 py-2.5">

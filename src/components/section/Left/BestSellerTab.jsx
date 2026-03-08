@@ -34,7 +34,7 @@ export default function BestSellerTab() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className=" flex max-lg:flex-wrap p-5 lg:p-16 gap-5 overflow-hidden text-black">
+    <section className=" flex max-lg:flex-wrap p-5 lg:p-16 gap-5 overflow-hidden text-black max_width">
       <div className=" flex max-md:flex-col-reverse gap-5 w-full">
         <div className=" w-full md:w-1/2 md:pr-20">
           <div className=" relative overflow-hidden">
@@ -51,7 +51,7 @@ export default function BestSellerTab() {
                   <img
                     src={data.image}
                     alt=""
-                    className="w-full aspect-square"
+                    className="w-full aspect-square group-hover:scale-105 duration-500"
                   />
                   <EyeView />
                 </div>
@@ -85,27 +85,32 @@ export default function BestSellerTab() {
             ))}
           </div>
         </div>
-        <div className=" w-full md:w-1/2 md:pl-10 text-start flex flex-col justify-center gap-x-5 gap-y-2.5">
-          <div className=" text-3xl md:text-5xl font-script">
-            Top-Rated Collections
+        <div className=" w-full md:w-1/2 md:pl-10 text-start flex flex-col justify-center gap-x-5 gap-y-2.5 relative">
+          <div className=" absolute inset-0">
+            <div className="bkg"></div>
           </div>
-          <div className=" font-semibold text-2xl md:text-3xl">
-            The collection everyone's talking about
-          </div>
+          <div className="z-10">
+            <div className=" text-3xl md:text-5xl font-script">
+              Top-Rated Collections
+            </div>
+            <div className=" font-semibold text-2xl md:text-3xl">
+              The collection everyone's talking about
+            </div>
 
-          <div className=" text-black md:text-gray-500/50 mt-5 md:mt-10">
-            {BestSeller?.map((data, item) => (
-              <div
-                key={item}
-                onMouseEnter={() => setActiveTab(item)}
-                className=" flex gap-10 items-center border-t border-b py-2.5 border-gray-500/25 group cursor-pointer"
-              >
-                <MoveRight className=" duration-500 group-hover:text-black group-hover:translate-x-2.5" />
-                <span className=" capitalize text-2xl group-hover:text-black">
-                  {data.tab}
-                </span>
-              </div>
-            ))}
+            <div className=" text-black md:text-gray-500/50 mt-5 md:mt-10">
+              {BestSeller?.map((data, item) => (
+                <div
+                  key={item}
+                  onMouseEnter={() => setActiveTab(item)}
+                  className=" flex gap-10 items-center border-t border-b py-2.5 border-gray-500/25 group cursor-pointer"
+                >
+                  <MoveRight className=" duration-500 group-hover:text-black group-hover:translate-x-2.5" />
+                  <span className=" capitalize text-2xl group-hover:text-black">
+                    {data.tab}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

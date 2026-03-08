@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FooterBannar() {
   return (
-    <section className="p-5 md:p-10">
+    <section className="p-5 md:p-10 max_width">
       <div className=" rounded-bl-[100px] md:rounded-bl-[150px] rounded-tr-[100px] md:rounded-tr-[150px] overflow-hidden relative">
         <div className=" absolute inset-0 ">
           <video

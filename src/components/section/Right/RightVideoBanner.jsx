@@ -91,7 +91,7 @@ export default function RightVideoBanner() {
                 comfort - furniture that will add a touch of style to any home.
               </p>
             </div>
-            <Button>Shop Collection</Button>
+            <Button animatColor="!text-[var(--btn)]">Shop Collection</Button>
           </div>
         </div>
       </div>
