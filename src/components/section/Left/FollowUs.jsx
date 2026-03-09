@@ -15,9 +15,9 @@ export default function FollowUs() {
 
       const percent = e.clientX / screenWidth;
 
-      const moveX = -maxMove * percent - 50;
+      const moveX = -maxMove * percent - 25;
 
-      console.log(moveX);
+      // console.log(moveX);
       gsap.to(track, {
         x: moveX,
         duration: 0.6,

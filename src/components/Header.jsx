@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import leftlogo from "../assets/yape.jpeg";
 import rightlogo from "../assets/zita.jpeg";
+// import { useNavigate } from "react-router-dom";
 
-export default function Header({ left, setLeft }) {
+// const navigate = useNavigate();
+
+export default function Header({ home, setHome }) {
+  useEffect(() => {
+    const saved = localStorage.getItem("home");
+
+    if (saved !== null) {
+      setHome(saved === "true");
+    }
+  }, []);
+
   const handlerHeaderLeft = () => {
-    setLeft(true);
+    setHome(true);
+    localStorage.setItem("home", "true");
+    location.href = "/";
   };
+
   const handlerHeaderRight = () => {
-    setLeft(false);
+    setHome(false);
+    localStorage.setItem("home", "false");
+    location.href = "/";
   };
 
   return (
@@ -17,12 +33,12 @@ export default function Header({ left, setLeft }) {
           {/* Right */}
           <div
             className={`${
-              left ? "" : "h-full w-full rounded-br-4xl bg-gray-700"
+              home ? "" : "h-full w-full rounded-br-4xl bg-gray-700"
             } p-2.5`}
           >
             <button
               className={`h-full w-fit p-2.5 flex flex-wrap justify-center gap-2.5 items-center cursor-pointer rounded-2xl bg-white ${
-                !left && "border"
+                !home && "border"
               }`}
               title="Left click"
               onClick={() => handlerHeaderLeft()}
@@ -33,12 +49,12 @@ export default function Header({ left, setLeft }) {
           {/* Left */}
           <div
             className={`${
-              left ? "h-full w-full rounded-bl-4xl bg-gray-700" : ""
+              home ? "h-full w-full rounded-bl-4xl bg-gray-700" : ""
             } p-2.5`}
           >
             <button
               className={`h-full w-fit ml-auto p-2.5 flex flex-wrap justify-center gap-2.5 items-center cursor-pointer rounded-2xl bg-white ${
-                left && "border"
+                home && "border"
               }`}
               title="Right click"
               onClick={() => handlerHeaderRight()}
