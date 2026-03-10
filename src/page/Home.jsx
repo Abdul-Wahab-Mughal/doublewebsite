@@ -1,9 +1,8 @@
 import React from "react";
 import reactLogo from "../assets/react.svg";
-import Silder from "../components/section/Left/Silder";
+import SilderBannar from "../components/section/Left/SilderBannar";
 import FourCard from "../components/section/Left/FourCard";
 import TextImage from "../components/section/Left/TextImage";
-
 import ProductList from "../components/section/Left/ProductList";
 import TwoImage from "../components/section/Left/TwoImage";
 import FooterBannar from "../components/section/Left/FooterBannar";
@@ -11,6 +10,7 @@ import BestSellerTab from "../components/section/Left/BestSellerTab";
 import FollowUs from "../components/section/Left/FollowUs";
 import { Building, LucideLockKeyhole } from "lucide-react";
 import { Link } from "react-router-dom";
+import RightCategoriesList from "../components/section/Right/RightCategoriesList";
 
 const chairsLists = [
   {
@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <>
       <div id="lefthome" className="bg-[#FBFBFB]">
-        <Silder />
+        <SilderBannar />
         <FourCard />
         <ProductList
           collectionsData={{ onsale: chairsLists, bestsellers: storageLists }}
@@ -52,6 +52,7 @@ export default function Home() {
         <TwoImage />
         <FooterBannar />
         <FollowUs />
+        <RightCategoriesList />
         <div className=" fixed bottom-5 left-1 bg-(--btn) w-fit p-2 rounded-xl z-50 h-fit cursor-pointer">
           <Link to="/contact">
             <div className="flex gap-2.5 border-r-2 pr-2 border-yellow-500">

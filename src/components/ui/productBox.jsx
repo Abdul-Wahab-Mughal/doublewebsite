@@ -20,12 +20,12 @@ export default function ProductBox({ onClick }) {
     >
       <div
         ref={boxRef}
-        className="bg-white max-w-[70%] max-h-[90%] rounded-4xl text-black relative overflow-hidden p-5"
+        className="bg-white max-w-[70%] max-h-[90%] rounded-tl-4xl rounded-br-4xl text-black relative overflow-hidden p-5"
       >
         <X
           onClick={onClick}
           size={24}
-          className=" absolute top-2.5 left-2.5 cursor-pointer"
+          className=" absolute top-2.5 right-2.5 cursor-pointer"
         />
         <div className="grid grid-cols-2">
           <div>

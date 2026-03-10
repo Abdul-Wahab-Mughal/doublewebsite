@@ -8,6 +8,8 @@ import RightCollectionBox from "../components/section/Right/RightCollectionBox";
 import RightProductListSlide from "../components/section/Right/RightProductListSlide";
 import RightVideoBanner from "../components/section/Right/RightVideoBanner";
 import RightContentBannar from "../components/section/Right/RightContentBannar";
+import { Link } from "react-router-dom";
+import { Building, LucideLockKeyhole } from "lucide-react";
 
 const chairsLists = [
   {
@@ -151,6 +153,17 @@ export default function RightHome() {
           storage: storageLists,
         }}
       />
+      <div className=" fixed bottom-5 left-1 bg-(--btn) w-fit p-2 rounded-xl z-50 h-fit cursor-pointer">
+        <Link to="/contact">
+          <div className="flex gap-2.5 border-r-2 pr-2 border-yellow-500">
+            <div className="flex items-end">
+              <Building />
+              <LucideLockKeyhole size={10} color="yellow" />
+            </div>
+            zakelijk Inloggen
+          </div>
+        </Link>
+      </div>
     </main>
   );
 }

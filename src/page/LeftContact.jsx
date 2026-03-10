@@ -1,4 +1,4 @@
-import { Check, Search } from "lucide-react";
+import { Check, ClipboardList, Search } from "lucide-react";
 import React from "react";
 import img from "../assets/eig_banner.jpg";
 import Button from "../components/ui/Button";
@@ -35,7 +35,8 @@ export default function LeftContact() {
               <Search />
             </div>
           </div>
-          <button className="bg-(--btn) text-white px-3 py-2 cursor-pointer max-md:hidden">
+          <button className="bg-(--btn) text-white px-3 py-2 cursor-pointer max-md:hidden flex gap-2">
+            <ClipboardList />
             Inkooplijst
           </button>
         </div>
