@@ -53,7 +53,7 @@ export default function Home() {
         <FooterBannar />
         <FollowUs />
         <div className=" fixed bottom-5 left-1 bg-(--btn) w-fit p-2 rounded-xl z-50 h-fit cursor-pointer">
-          <a href="/contact">
+          <Link to="/contact">
             <div className="flex gap-2.5 border-r-2 pr-2 border-yellow-500">
               <div className="flex items-end">
                 <Building />
@@ -61,7 +61,7 @@ export default function Home() {
               </div>
               zakelijk Inloggen
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </>
