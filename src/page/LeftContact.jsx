@@ -9,7 +9,7 @@ export default function LeftContact() {
       <div className=" w-full h-26"></div>
       <div className="flex justify-between px-10 py-2.5 text-black">
         <div></div>
-        <div className="flex gap-5">
+        <div className="flex gap-5 flex-wrap">
           <span className="text-sm cursor-pointer">Slimme oplossingen</span>
           <span className="text-sm cursor-pointer">Inspiratie</span>
           <span className="text-sm cursor-pointer">Klantenservice</span>
@@ -18,10 +18,10 @@ export default function LeftContact() {
           <span className="text-sm cursor-pointer">Aanbiedingen</span>
         </div>
       </div>
-      <div className="h-screen text-black">
+      <div className=" text-black">
         {/* Serach */}
-        <div className="flex justify-between gap-5 px-10">
-          <button className="bg-(--btn) text-white px-3 py-2 cursor-pointer">
+        <div className="flex justify-between gap-5 px-5 md:px-10">
+          <button className="bg-(--btn) text-white px-3 py-2 cursor-pointer max-md:hidden">
             Assortiment
           </button>
           <div className="w-full h-full flex items-center bg-gray-200">
@@ -35,13 +35,13 @@ export default function LeftContact() {
               <Search />
             </div>
           </div>
-          <button className="bg-(--btn) text-white px-3 py-2 cursor-pointer">
+          <button className="bg-(--btn) text-white px-3 py-2 cursor-pointer max-md:hidden">
             Inkooplijst
           </button>
         </div>
         {/* After serach */}
-        <div className="flex justify-between px-10 py-2.5">
-          <div className="flex gap-5">
+        <div className="flex justify-between px-10 py-2.5 flex-wrap">
+          <div className="flex gap-5 max-md:hidden">
             <span className="flex items-center gap-1.5 text-sm cursor-pointer">
               <Check size={15} color="green" /> Ruim assortiment en aanbiedingen
             </span>
@@ -52,19 +52,24 @@ export default function LeftContact() {
               <Check size={15} color="green" /> Altijd een vestiging in de buurt
             </span>
           </div>
-          <div>
-            <span>Klant worden</span>
+          <div className="flex gap-2.5 justify-end w-full">
+            <span className=" border-b border-orange-500 text-sm">
+              Klant worden
+            </span>
+            <span className=" border-b border-orange-500 text-sm">
+              Inloggen
+            </span>
           </div>
         </div>
         {/* Login */}
-        <div className="max-h-[80%] h-full relative flex justify-center items-center">
+        <div className=" h-full relative flex justify-center items-center py-20">
           <img
             src={img}
             alt=""
             className=" absolute inset-0 h-full w-full object-cover object-left z-10"
           />
-          <div className="bg-white w-4/5 h-4/5 flex text-left z-20">
-            <div className="w-1/2 p-10 flex flex-col gap-5">
+          <div className="bg-white w-4/5 h-4/5 flex flex-col md:flex-row text-left z-20">
+            <div className="md:w-1/2 p-5 md:p-10 flex flex-col gap-5">
               <div>Inloggon</div>
               <p>
                 Let op: Ben jij klant in onze zelfbedieningsvestigingen, dan kun
@@ -73,7 +78,7 @@ export default function LeftContact() {
                 communicatie van Sligro hebt ontvangen.
               </p>
             </div>
-            <div className="w-1/2 bg-gray-100 p-10 flex flex-col gap-5">
+            <div className="md:w-1/2 bg-gray-100 p-5 md:p-10 flex flex-col gap-5">
               <div>Onbezorged ondernemen Word nu Sligro Klant</div>
               <p>
                 Als ondernemer of instelling inkopen doen bij een

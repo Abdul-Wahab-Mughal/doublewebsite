@@ -25,7 +25,7 @@ export default function RightProductListSlide({
         </div>
         {/* Silder */}
         <div>
-          <div className="flex gap-2.5 mb-5">
+          <div className="flex gap-2.5 mb-5 max-sm:grid max-sm:grid-cols-3">
             {Object.keys(collectionsData).length <= 1 || (
               <>
                 {Object.keys(collectionsData).map((name, index) => (

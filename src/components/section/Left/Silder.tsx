@@ -13,7 +13,7 @@ export default function Silder() {
   const totalSlides = 3;
 
   return (
-    <section className=" relative max-h-250 h-full">
+    <section className=" relative max-md:h-screen max-h-250 h-full z-100">
       <Swiper
         loop
         className="mySwiper_home h-full"

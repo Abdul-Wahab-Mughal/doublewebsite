@@ -28,7 +28,7 @@ export default function Header({ home, setHome }) {
 
   return (
     <>
-      <header className="w-full absolute top-0 left-0 z-50">
+      <header className="w-full absolute top-0 left-0 z-500">
         <div className="relative w-full flex gap-5 items-center justify-between overflow-hidden">
           {/* Right */}
           <div
@@ -43,7 +43,11 @@ export default function Header({ home, setHome }) {
               title="Left click"
               onClick={() => handlerHeaderLeft()}
             >
-              <img src={leftlogo} alt="" className="w-32 h-14 object-cover" />
+              <img
+                src={leftlogo}
+                alt=""
+                className="w-32 h-14 object-cover"
+              />
             </button>
           </div>
           {/* Left */}
