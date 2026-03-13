@@ -80,7 +80,7 @@ export default function AfterHeader() {
               <Check size={15} color="green" /> Altijd een vestiging in de buurt
             </span>
           </div>
-          <div className="flex gap-2.5 justify-end w-full">
+          <div className="flex gap-2.5 justify-end">
             <UnderlineButton>Klant worden</UnderlineButton>
             <UnderlineButton
             // onClick={openlogin}
