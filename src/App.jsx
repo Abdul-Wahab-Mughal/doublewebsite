@@ -9,6 +9,7 @@ import LeftContact from "./page/LeftContact";
 import RightHome from "./page/RightHome";
 import Inkooplijst from "./page/Inkooplijst";
 import KlantWorden from "./page/KlantWorden";
+import KlantenkaartAanvragen from "./page/KlantenkaartAanvragen";
 // import NotFound from "./page/NotFound";
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
           <Route path="/" element={home ? <Home /> : <RightHome />} />
           <Route path="/contact" element={<LeftContact />} />
           <Route path="/inkooplijst" element={<Inkooplijst />} />
+
           <Route path="/klant-worden" element={<KlantWorden />} />
+          <Route path="/klant-worden/klantenkaart-aanvragen" element={<KlantenkaartAanvragen />} />
+
           {/* <Route path="/h" element={<RightHome />} /> */}
           {/*  */}
           {/* <Route path="*" element={<NotFound />} /> */}

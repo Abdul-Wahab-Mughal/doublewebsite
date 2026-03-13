@@ -8,23 +8,23 @@ export default function KlantWorden() {
   return (
     <main className="bg-white min-h-screen text-black">
       <AfterHeader />
-      <section className="py-10">
+      <section className="pb-10">
         <img
           src="https://www.sligro.nl/klant-worden/_jcr_content/root/content/teaser.coreimg.85.1920.jpeg/1729255960928/20240228-platform-klantworden-klantenpas-1900x320-v1-2.jpeg"
           alt=""
           className="h-75 object-cover w-full z-10"
         />
-        <div className=" w-187.5 m-auto p-5 space-y-5 -mt-30 pt-10 bg-white z-20 relative">
+        <div className=" max-w-187.5 m-auto p-5 space-y-5 -mt-30 pt-10 bg-white z-20 relative">
           <p>Welkom in de wereld van food</p>
           <h2 className="text-3xl">Klant worden bij Sligro</h2>
-          <p className=" text-sm w-175 m-auto">
+          <p className=" text-sm max-w-175 m-auto">
             pBij Sligro vind je een compleet food en non-food assortiment. Of je
             nu komt voor onze bijzondere koffiesoorten, verse vis, exclusieve
             wijn of een professionele keukenmachine. Je slaagt gegarandeerd.
           </p>
           <Link
             className="bg-(--btn) text-white px-3 py-1 cursor-pointer max-md:hidden flex items-center gap-2 hover:bg-(--btn)/75 w-fit m-auto mt-5"
-            to="/inkooplijst"
+            to="/klant-worden/klantenkaart-aanvragen"
           >
             Vraag gratis klantenkaart aan
           </Link>
