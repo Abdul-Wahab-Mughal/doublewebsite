@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function FourCard() {
-  const ref = useRef(null);
+  const refcard = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -22,7 +22,7 @@ export default function FourCard() {
 
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ref.current,
+          trigger: refcard.current,
           start: "top center",
           once: true,
           // markers: true,
@@ -35,7 +35,7 @@ export default function FourCard() {
 
   return (
     <>
-      <section ref={ref}>
+      <section ref={refcard}>
         <Swiper
           // effect={"coverflow"}
           grabCursor

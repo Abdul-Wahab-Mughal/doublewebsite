@@ -1,9 +1,17 @@
 import React from "react";
 
-export default function Button({ children, className, animatColor }) {
+export default function Button({
+  children,
+  className,
+  animatColor,
+  type,
+  onClick,
+}) {
   return (
     <button
+      type={type}
       className={` border p-2 w-fit rounded-full mt-10 group hover:border-transparent duration-2500 relative overflow-hidden cursor-pointer ${className}`}
+      onClick={onClick}
     >
       <div className=" border py-2 px-5 rounded-full text-sm group-hover:border-transparent duration-2500">
         <span

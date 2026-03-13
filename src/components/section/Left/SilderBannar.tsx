@@ -43,7 +43,7 @@ export default function SilderBannar() {
 
   return (
     <>
-      <section ref={TextRefl} className="bg-white flex flex-col">
+      <section ref={TextRefl} className="bg-white flex flex-col pt-10">
         <div className=" p-4 md:p-16 flex flex-col justify-center gap-5 relative text-black z-20">
           <div className="text-3xl md:text-5xl font-semibold pt-10 uppercase">
             {text_title.split("").map((word, i) => (
@@ -66,7 +66,7 @@ export default function SilderBannar() {
                   name="serach"
                   className="w-full bg-white px-3 py-2.5 border-0"
                 />
-                <div className="py-2.5 border-0 px-5 bg-(--btn)">
+                <div className="py-2.5 border-0 px-5 bg-(--btn2)">
                   <Search color="white" />
                 </div>
               </div>

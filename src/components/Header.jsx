@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import leftlogo from "../assets/yape.jpeg";
 import rightlogo from "../assets/zita.jpeg";
+import { Check, ChevronRight, ClipboardList, Search } from "lucide-react";
+import UnderlineButton from "./ui/underlineButton";
 // import { useNavigate } from "react-router-dom";
 
 // const navigate = useNavigate();
@@ -43,17 +45,13 @@ export default function Header({ home, setHome }) {
               title="Left click"
               onClick={() => handlerHeaderLeft()}
             >
-              <img
-                src={leftlogo}
-                alt=""
-                className="w-32 h-14 object-cover"
-              />
+              <img src={leftlogo} alt="" className="w-32 h-14 object-cover" />
             </button>
           </div>
           {/* Left */}
           <div
             className={`${
-              home ? "h-full w-full rounded-bl-4xl bg-gray-700" : ""
+              home ? "h-full w-full rounded-bl-4xl bg-(--btn2)" : ""
             } p-2.5`}
           >
             <button

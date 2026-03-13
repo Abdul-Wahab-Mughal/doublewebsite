@@ -51,7 +51,6 @@ export default function Home() {
         <BestSellerTab />
         <TwoImage />
         <FooterBannar />
-        <FollowUs />
         <RightCategoriesList />
         <div className=" fixed bottom-5 left-1 bg-(--btn) w-fit p-2 rounded-xl z-50 h-fit cursor-pointer">
           <Link to="/contact">
