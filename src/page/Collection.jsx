@@ -235,67 +235,62 @@ export default function Collection() {
           </div>
           {/* Right */}
           <div className="w-full grid grid-cols-4 gap-5">
-            {[
-              ...collectionsData,
-              ...collectionsData,
-              ...collectionsData,
-              ...collectionsData,
-              ...collectionsData,
-              ...collectionsData,
-              ...collectionsData,
-            ]?.map((list, index) => (
-              <div className="productlist text-black space-y-2.5 group cursor-pointer">
-                <div className=" relative overflow-hidden">
-                  <img
-                    src={list.image}
-                    className="w-full h-full block rounded"
-                  />
-                  <img
-                    src={list.hoverimage}
-                    className="w-full h-full block rounded absolute inset-0 duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105"
-                  />
-                  {/* sale */}
-                  {list.pricecompare && (
-                    <div className=" absolute inset-0 left-2.5 top-2.5">
-                      <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
-                        {getDiscount(list.price, list.pricecompare)}% sale
-                      </div>
-                    </div>
-                  )}
-                  {/* Eye */}
-                  <div className="">
+            {Array(5)
+              .fill(collectionsData)
+              .flat()
+              .map((list, index) => (
+                <div className="productlist text-black space-y-2.5 group cursor-pointer">
+                  <div className=" relative overflow-hidden">
+                    <Link to="/product">
+                      <img
+                        src={list.image}
+                        className="w-full h-full block rounded"
+                      />
+                      <img
+                        src={list.hoverimage}
+                        className="w-full h-full block rounded absolute inset-0 duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105"
+                      />
+                      {/* sale */}
+                      {list.pricecompare && (
+                        <div className=" absolute inset-0 left-2.5 top-2.5">
+                          <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
+                            {getDiscount(list.price, list.pricecompare)}% sale
+                          </div>
+                        </div>
+                      )}
+                    </Link>
+                    {/* Eye */}
                     <EyeView className="bottom-auto top-2.5 " bgblack />
                   </div>
-                </div>
-                <div className="">
-                  <div className="text-start flex gap-2 py-2.5">
-                    {list.colors?.length &&
-                      list.colors?.map((e, index) => (
-                        <div
-                          key={index}
-                          className="rounded-full w-2.5 h-2.5"
-                          style={{ background: e }}
-                        />
-                      ))}
-                  </div>
-                  <div className=" text-sm font-bold flex justify-between capitalize text-start">
-                    {list.label}
-                  </div>
-                  <div className="flex text-sm justify-between">
-                    <span
-                      className={` font-semibold ${
-                        list?.pricecompare && "text-red-500"
-                      }`}
-                    >
-                      {list.price}{" "}
-                      <span className="text-gray-500 line-through">
-                        {list?.pricecompare}
+                  <Link to="/product">
+                    <div className="text-start flex gap-2 py-2.5">
+                      {list.colors?.length &&
+                        list.colors?.map((e, index) => (
+                          <div
+                            key={index}
+                            className="rounded-full w-2.5 h-2.5"
+                            style={{ background: e }}
+                          />
+                        ))}
+                    </div>
+                    <div className=" text-sm font-bold flex justify-between capitalize text-start">
+                      {list.label}
+                    </div>
+                    <div className="flex text-sm justify-between">
+                      <span
+                        className={` font-semibold ${
+                          list?.pricecompare && "text-red-500"
+                        }`}
+                      >
+                        {list.price}{" "}
+                        <span className="text-gray-500 line-through">
+                          {list?.pricecompare}
+                        </span>
                       </span>
-                    </span>
-                  </div>
+                    </div>
+                  </Link>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </section>

@@ -10,8 +10,6 @@ export default function ProductBox({ onClick }) {
 
   const handleOutsideClick = (e) => {
     if (boxRef.current && !boxRef.current.contains(e.target)) {
-      e.preventDefault();
-      e.stopPropagation();
       onClick();
     }
   };

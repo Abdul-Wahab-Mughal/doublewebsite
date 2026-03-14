@@ -11,6 +11,7 @@ import Inkooplijst from "./page/Inkooplijst";
 import KlantWorden from "./page/KlantWorden";
 import KlantenkaartAanvragen from "./page/KlantenkaartAanvragen";
 import Collection from "./page/Collection";
+import Product from "./page/Product";
 // import NotFound from "./page/NotFound";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           />
 
           <Route path="/collection" element={<Collection />} />
+          <Route path="/product" element={<Product />} />
 
           {/* <Route path="/h" element={<RightHome />} /> */}
           {/*  */}
