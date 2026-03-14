@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EyeView from "../../ui/EyeView";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,20 +38,11 @@ export default function FourCard() {
     <>
       <section ref={refcard}>
         <Swiper
-          // effect={"coverflow"}
           grabCursor
           slidesPerView={1}
           spaceBetween={20}
           pagination
           navigation
-          // breakpoints={{
-          //   640: {
-          //     slidesPerView: 3,
-          //   },
-          //   1024: {
-          //     slidesPerView: 4,
-          //   },
-          // }}
           modules={[Pagination, Navigation]}
           className="mySwiper_Cat_List pb-6!"
           style={{
@@ -60,7 +52,10 @@ export default function FourCard() {
           <SwiperSlide className="productlist text-black space-y-2.5 cursor-pointer">
             <div className=" flex max-lg:flex-wrap gap-y-5 p-5 lg:p-16 overflow-hidden max_width">
               <div className="fourcard w-1/2 h-full md:h-fit md:mt-auto lg:flex-1 flex items-end pr-2.5 md:p-2.5">
-                <div className="text-start flex flex-col gap-3 w-full h-full">
+                <Link
+                  to="/collection"
+                  className="text-start flex flex-col gap-3 w-full h-full"
+                >
                   <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full overflow-hidden group">
                     <img
                       src={card}
@@ -76,10 +71,13 @@ export default function FourCard() {
                     Solid teak top with dark inlay. Food-safe finish. Metal
                     base.
                   </p>
-                </div>
+                </Link>
               </div>
               <div className="fourcard w-1/2 lg:flex-3 pl-2.5 md:p-2.5">
-                <div className="text-start flex flex-col gap-3">
+                <Link
+                  to="/collection"
+                  className="text-start flex flex-col gap-3"
+                >
                   <div className=" relative rounded-bl-[50px] md:rounded-bl-[125px] rounded-tr-[50px] md:rounded-tr-[125px] overflow-hidden group">
                     <img
                       src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_mp-204323-dresser-metropole-large-detail-2_60ebfdd6-299f-458a-8ce9-9ddd5c35786c.jpg?v=1749205903&width=695"
@@ -94,10 +92,13 @@ export default function FourCard() {
                   <p className="text-black text-xs">
                     Reclaimed teak and black metal. Boomerang-style legs.
                   </p>
-                </div>
+                </Link>
               </div>
               <div className="fourcard w-1/2 lg:flex-2 flex items-center pr-2.5 md:p-2.5">
-                <div className="text-start flex flex-col gap-3">
+                <Link
+                  to="/collection"
+                  className="text-start flex flex-col gap-3"
+                >
                   <div className=" relative rounded-bl-[50px] md:rounded-bl-[125px] rounded-tr-[50px] md:rounded-tr-[125px] overflow-hidden lg:rounded-none group">
                     <img
                       src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/bookcase-cosmo-3d-3or-fix-4_1a0c3c68-420f-40e4-b769-817c65fbbf78.jpg?v=1748866654&width=405"
@@ -112,10 +113,13 @@ export default function FourCard() {
                   <p className="text-black text-xs">
                     Round teak top. Natural wood grain. Modern metal base.
                   </p>
-                </div>
+                </Link>
               </div>
               <div className="fourcard w-1/2 lg:flex-1 pl-2.5 md:p-2.5">
-                <div className="text-start flex flex-col gap-3">
+                <Link
+                  to="/collection"
+                  className="text-start flex flex-col gap-3"
+                >
                   <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full group overflow-hidden">
                     <img
                       src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_bt-438125-cabinet-beam-small-detail.jpg?v=1747307880&width=260"
@@ -130,14 +134,17 @@ export default function FourCard() {
                   <p className="text-black text-xs">
                     Set of two. Reclaimed teak tops. Slim black frames.
                   </p>
-                </div>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="productlist text-black space-y-2.5 cursor-pointer">
             <div className=" flex max-lg:flex-wrap gap-y-5 p-5 lg:p-16 overflow-hidden max_width">
               <div className="fourcard w-1/2 h-full md:h-fit md:mt-auto lg:flex-1 flex items-end pr-2.5 md:p-2.5">
-                <div className="text-start flex flex-col gap-3 w-full h-full">
+                <Link
+                  to="/collection"
+                  className="text-start flex flex-col gap-3 w-full h-full"
+                >
                   <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full overflow-hidden group">
                     <img
                       src={card}
@@ -153,10 +160,13 @@ export default function FourCard() {
                     Solid teak top with dark inlay. Food-safe finish. Metal
                     base.
                   </p>
-                </div>
+                </Link>
               </div>
               <div className="fourcard w-1/2 lg:flex-3 pl-2.5 md:p-2.5">
-                <div className="text-start flex flex-col gap-3">
+                <Link
+                  to="/collection"
+                  className="text-start flex flex-col gap-3"
+                >
                   <div className=" relative rounded-bl-[50px] md:rounded-bl-[125px] rounded-tr-[50px] md:rounded-tr-[125px] overflow-hidden group">
                     <img
                       src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_mp-204323-dresser-metropole-large-detail-2_60ebfdd6-299f-458a-8ce9-9ddd5c35786c.jpg?v=1749205903&width=695"
@@ -171,10 +181,13 @@ export default function FourCard() {
                   <p className="text-black text-xs">
                     Reclaimed teak and black metal. Boomerang-style legs.
                   </p>
-                </div>
+                </Link>
               </div>
               <div className="fourcard w-1/2 lg:flex-2 flex items-center pr-2.5 md:p-2.5">
-                <div className="text-start flex flex-col gap-3">
+                <Link
+                  to="/collection"
+                  className="text-start flex flex-col gap-3"
+                >
                   <div className=" relative rounded-bl-[50px] md:rounded-bl-[125px] rounded-tr-[50px] md:rounded-tr-[125px] overflow-hidden lg:rounded-none group">
                     <img
                       src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/bookcase-cosmo-3d-3or-fix-4_1a0c3c68-420f-40e4-b769-817c65fbbf78.jpg?v=1748866654&width=405"
@@ -189,10 +202,13 @@ export default function FourCard() {
                   <p className="text-black text-xs">
                     Round teak top. Natural wood grain. Modern metal base.
                   </p>
-                </div>
+                </Link>
               </div>
               <div className="fourcard w-1/2 lg:flex-1 pl-2.5 md:p-2.5">
-                <div className="text-start flex flex-col gap-3">
+                <Link
+                  to="/collection"
+                  className="text-start flex flex-col gap-3"
+                >
                   <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full group overflow-hidden">
                     <img
                       src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_bt-438125-cabinet-beam-small-detail.jpg?v=1747307880&width=260"
@@ -207,7 +223,7 @@ export default function FourCard() {
                   <p className="text-black text-xs">
                     Set of two. Reclaimed teak tops. Slim black frames.
                   </p>
-                </div>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function FooterBannar() {
   return (
@@ -30,8 +31,13 @@ export default function FooterBannar() {
           </p>
 
           <button className=" m-auto p-2.5 border rounded-full cursor-pointer group">
-            <div className=" w-40 h-40 border rounded-full flex justify-center items-center overflow-hidden relative">
-              <span className="group-hover:text-black duration-2500">Explore</span>
+            <Link
+              to="/collection"
+              className=" w-40 h-40 border rounded-full flex justify-center items-center overflow-hidden relative"
+            >
+              <span className="group-hover:text-black duration-2500">
+                Explore
+              </span>
               <span className=" absolute translate-y-full group-hover:translate-y-0 duration-2500 -z-10">
                 <svg
                   className="icon text-[#d3e3bb]"
@@ -63,7 +69,7 @@ export default function FooterBannar() {
                   </g>
                 </svg>
               </span>
-            </div>
+            </Link>
           </button>
         </div>
       </div>

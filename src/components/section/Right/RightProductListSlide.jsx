@@ -21,7 +21,7 @@ export default function RightProductListSlide({
             <h3 className="uppercase font-semibold">{title}</h3>
             <p className="max-w-md text-gray-500 max-md:mb-2.5">{subititle}</p>
           </div>
-          <Button animatColor="!text-[var(--btn)]">Shop All</Button>
+          <Button animatColor="!text-[var(--btn)]" to="/collection">Shop All</Button>
         </div>
         {/* Silder */}
         <div>

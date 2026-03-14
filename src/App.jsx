@@ -10,6 +10,7 @@ import RightHome from "./page/RightHome";
 import Inkooplijst from "./page/Inkooplijst";
 import KlantWorden from "./page/KlantWorden";
 import KlantenkaartAanvragen from "./page/KlantenkaartAanvragen";
+import Collection from "./page/Collection";
 // import NotFound from "./page/NotFound";
 
 function App() {
@@ -26,7 +27,12 @@ function App() {
           <Route path="/inkooplijst" element={<Inkooplijst />} />
 
           <Route path="/klant-worden" element={<KlantWorden />} />
-          <Route path="/klant-worden/klantenkaart-aanvragen" element={<KlantenkaartAanvragen />} />
+          <Route
+            path="/klant-worden/klantenkaart-aanvragen"
+            element={<KlantenkaartAanvragen />}
+          />
+
+          <Route path="/collection" element={<Collection />} />
 
           {/* <Route path="/h" element={<RightHome />} /> */}
           {/*  */}

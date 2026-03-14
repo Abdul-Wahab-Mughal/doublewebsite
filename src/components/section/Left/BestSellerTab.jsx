@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EyeView from "../../ui/EyeView";
 import { MoveRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BestSeller = [
   {
@@ -47,40 +48,42 @@ export default function BestSellerTab() {
                     : " opacity-0 invisible absolute"
                 } bg-white rounded-bl-4xl md:rounded-bl-[100px] rounded-tr-4xl md:rounded-tr-[150px] w-full duration-500`}
               >
-                <div className=" relative group rounded-bl-4xl md:rounded-bl-[150px] rounded-tr-4xl md:rounded-tr-[150px] overflow-hidden">
-                  <img
-                    src={data.image}
-                    alt=""
-                    className="w-full aspect-square group-hover:scale-105 duration-500"
-                  />
-                  <EyeView />
-                </div>
-                <div
-                  className={`${
-                    index === activeTab ? "translate-x-0" : ""
-                  } flex items-center justify-between py-5 px-7 md:pl-20 -translate-x-full duration-500`}
-                >
-                  <div className="text-start">
-                    <span className=" capitalize text-xs font-bold">
-                      {data.title}
-                    </span>
-                    <div className=" capitalize border-b w-fit">
-                      {data.name}
+                <Link to="/collection">
+                  <div className=" relative group rounded-bl-4xl md:rounded-bl-[150px] rounded-tr-4xl md:rounded-tr-[150px] overflow-hidden">
+                    <img
+                      src={data.image}
+                      alt=""
+                      className="w-full aspect-square group-hover:scale-105 duration-500"
+                    />
+                    <EyeView />
+                  </div>
+                  <div
+                    className={`${
+                      index === activeTab ? "translate-x-0" : ""
+                    } flex items-center justify-between py-5 px-7 md:pl-20 -translate-x-full duration-500`}
+                  >
+                    <div className="text-start">
+                      <span className=" capitalize text-xs font-bold">
+                        {data.title}
+                      </span>
+                      <div className=" capitalize border-b w-fit">
+                        {data.name}
+                      </div>
+                    </div>
+                    <div className=" text-sm font-bold">
+                      {data.pricecompare ? (
+                        <div className=" flex flex-col">
+                          <span>{data.price}</span>
+                          <span className=" line-through">
+                            {data.pricecompare}
+                          </span>
+                        </div>
+                      ) : (
+                        <span>From {data.price}</span>
+                      )}
                     </div>
                   </div>
-                  <div className=" text-sm font-bold">
-                    {data.pricecompare ? (
-                      <div className=" flex flex-col">
-                        <span>{data.price}</span>
-                        <span className=" line-through">
-                          {data.pricecompare}
-                        </span>
-                      </div>
-                    ) : (
-                      <span>From {data.price}</span>
-                    )}
-                  </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>

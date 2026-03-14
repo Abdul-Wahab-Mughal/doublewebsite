@@ -45,7 +45,7 @@ export default function TextImage() {
             Honest materials, timeless style — built to last.
           </p>
 
-          <Button>View More</Button>
+          <Button to="/collection">View More</Button>
         </div>
         <div className="w-full lg:w-[60%] flex gap-5">
           <div className="cardbox lg:flex-4 flex items-end w-full">
