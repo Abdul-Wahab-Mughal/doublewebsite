@@ -1,12 +1,21 @@
 import {
   BadgePercent,
   Circle,
+  Facebook,
   Heart,
+  Minus,
   MoveRight,
+  Plus,
+  Share2Icon,
   ShoppingCartIcon,
   X,
 } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import EyeView from "../components/ui/EyeView";
+import TextImage from "../components/section/Left/TextImage";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 
 const collectionsData = [
   {
@@ -21,32 +30,47 @@ const collectionsData = [
   },
 ];
 export default function Product() {
+  const [openDescription, setOpenDescription] = useState(false);
+
+  const getDiscount = (price, compare) => {
+    const current = parseFloat(price.replace("€", ""));
+    const original = parseFloat(compare.replace("€", ""));
+    return Math.round(((original - current) / original) * 100);
+  };
+
   return (
     <main className=" bg-white text-black pt-30 min-h-screen">
       <section className="p-5 md:p-10 grid md:grid-cols-2 gap-5 text-start">
         {/* left */}
-        <div>
-          <div>
-            <img
-              src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/H4RBRCBN-1_1482x.jpg?v=1747308543"
-              alt=""
-            />
-          </div>
-          <div className=" grid grid-cols-4 gap-2.5">
-            <img
-              src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/H4RBRCBN-1_1482x.jpg?v=1747308543"
-              alt=""
-              className=" border rounded-2xl"
-            />
-            <img
-              src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/H4RBRCBN-1_1482x.jpg?v=1747308543"
-              alt=""
-              className=" border rounded-2xl"
-            />
+        <div className=" relative">
+          <div className=" sticky top-0">
+            <div>
+              <img
+                src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/H4RBRCBN-1_1482x.jpg?v=1747308543"
+                alt=""
+              />
+            </div>
+            <div className=" grid grid-cols-4 gap-2.5">
+              <img
+                src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/H4RBRCBN-1_1482x.jpg?v=1747308543"
+                alt=""
+                className=" border rounded-2xl"
+              />
+              <img
+                src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/H4RBRCBN-1_1482x.jpg?v=1747308543"
+                alt=""
+                className=" border rounded-2xl"
+              />
+            </div>
           </div>
         </div>
         {/* Right */}
         <div className="space-y-2.5">
+          <div>
+            <span className="bg-red-500 text-white rounded-full py-1 px-2.5 text-sm">
+              SALE
+            </span>
+          </div>
           <h2 className=" text-3xl uppercase">Mini vacuum cleaner</h2>
           <p className=" underline">InnovaGoods</p>
           <div className=" uppercase grid grid-cols-2">
@@ -117,52 +141,101 @@ export default function Product() {
           </div>
           {/* quantity */}
           <span>Units</span>
-          <div className="flex gap-5">
-            <input
-              type="text"
-              name=""
-              id=""
-              className="w-fit max-w-24 text-end"
-              placeholder="1"
-            />
+          <div className="flex gap-5 pt-5">
+            <div class="p-2.5 rounded-full border flex items-center gap-5">
+              <button
+                type="button"
+                aria-label="Decrease quantity for Round Charcuterie Board"
+                className=" disabled:text-gray-300"
+                disabled
+              >
+                <Minus />
+              </button>
+
+              <input
+                type="number"
+                name="quantity"
+                id="Quantity"
+                value="1"
+                min="1"
+                max="10"
+                step="1"
+                className=" w-10 text-center appearance-none"
+              />
+
+              <button
+                type="button"
+                aria-label="Increase quantity for Round Charcuterie Board"
+              >
+                <Plus />
+              </button>
+            </div>
             <span className="flex items-center gap-2.5">
               <Circle color="green" fill="green" size={10} /> Available
             </span>
           </div>
           {/* Button */}
-          <div className="flex gap-5">
-            <button className="flex items-center justify-center gap-2.5 bg-green-400 py-2.5 w-full rounded-lg cursor-pointer">
-              <ShoppingCartIcon fill="bg-gray-700" /> Add to cart
+          <div className="flex gap-2.5">
+            <button className="flex items-center justify-center gap-2.5 bg-(--btn) py-5 w-full rounded-lg cursor-pointer text-white hover:bg-(--btn)/75">
+              <ShoppingCartIcon /> Add to cart
             </button>
+            {/* 
             <div className=" flex justify-center items-center border rounded-lg p-5">
               <Heart size={20} />
-            </div>
+            </div> 
+            */}
           </div>
           {/* Description */}
-          <div className="py-2.5 border-y border-gray-200">
-            <div className=" uppercase underline flex gap-5 group cursor-pointer">
+          <div className="py-2.5 my-5 border-y border-gray-200">
+            <div
+              className=" uppercase underline flex items-center gap-5 group cursor-pointer text-xl"
+              onClick={() => setOpenDescription(true)}
+            >
               Description{" "}
               <div className="w-0 group-hover:w-full overflow-hidden duration-1000">
-                <MoveRight size={25}/>
+                <MoveRight size={25} />
               </div>
             </div>
             {/* open Description */}
-            <div
-              className=" group bg-amber-100"
-              // open
-            >
+            <div className=" group bg-amber-100">
               <div
-                className={`fixed top-0 right-0 z-500 bg-black/25 w-full h-full hidden group-open:block`}
+                className={`fixed top-0 right-0 z-500 w-full h-full duration-500
+                ${
+                  openDescription
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible"
+                }
+                `}
               >
-                <div className=" bg-white max-w-138.75 relative overflow-hidden max-h-screen flex flex-col ml-auto translate-x-full group-open:translate-x-0 duration-500">
-                  <div className=" relative px-10 py-5">
+                <div
+                  className={` absolute inset-0 bg-black/50 duration-500
+                ${openDescription ? "visible" : "invisible"}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setOpenDescription(false);
+                  }}
+                ></div>
+                <div
+                  className={` bg-white max-w-138.75 relative overflow-hidden max-h-screen flex flex-col ml-auto duration-500 
+                  ${openDescription ? "translate-x-0" : "translate-x-full"}
+                  `}
+                >
+                  <div className=" relative p-5 md:px-10">
                     <h2 className=" text-3xl">Description</h2>
-                    <button className=" absolute top-5 right-5">
+                    <button
+                      className=" absolute top-5 right-5"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setOpenDescription(false);
+                      }}
+                    >
                       <X />
                     </button>
                   </div>
 
-                  <div className="px-10 pb-5 overflow-auto flex-1 space-y-5">
+                  <div className="px-5 md:px-10 pb-5 overflow-auto flex-1 space-y-5">
                     <p>
                       A stunning blend of rustic charm and modern design, the
                       Blue Round Charcuterie Board with natural wooden slats is
@@ -218,8 +291,172 @@ export default function Product() {
               </div>
             </div>
           </div>
-          {/*  */}
+          {/* proudct */}
+          <div className="w-full grid grid-cols-2 gap-5">
+            {Array(2)
+              .fill(collectionsData)
+              .flat()
+              .map((list, index) => (
+                <div
+                  key={index}
+                  className="productlist text-black space-y-2.5 group cursor-pointer"
+                >
+                  <div className=" relative overflow-hidden">
+                    <Link to="/product">
+                      <img
+                        src={list.image}
+                        className="w-full h-full block rounded"
+                      />
+                      <img
+                        src={list.hoverimage}
+                        className="w-full h-full block rounded absolute inset-0 duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105"
+                      />
+                      {/* sale */}
+                      {list.pricecompare && (
+                        <div className=" absolute inset-0 left-2.5 top-2.5">
+                          <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
+                            {getDiscount(list.price, list.pricecompare)}% sale
+                          </div>
+                        </div>
+                      )}
+                    </Link>
+                    {/* Eye */}
+                    <EyeView className="bottom-auto top-2.5 " bgblack />
+                  </div>
+                  <Link to="/product">
+                    <div className="text-start flex gap-2 py-2.5">
+                      {list.colors?.length &&
+                        list.colors?.map((e, index) => (
+                          <div
+                            key={index}
+                            className="rounded-full w-2.5 h-2.5"
+                            style={{ background: e }}
+                          />
+                        ))}
+                    </div>
+                    <div className=" text-sm font-bold flex justify-between capitalize text-start">
+                      {list.label}
+                    </div>
+                    <div className="flex text-sm justify-between">
+                      <span
+                        className={` font-semibold ${
+                          list?.pricecompare && "text-red-500"
+                        }`}
+                      >
+                        {list.price}{" "}
+                        <span className="text-gray-500 line-through">
+                          {list?.pricecompare}
+                        </span>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+          </div>
+          {/* Share */}
+          <div className=" flex gap-2.5 items-center py-10">
+            <h3 className=" text-xl text-gray-500">Share:</h3>
+            <div className=" p-2.5 border rounded-full h-fit w-fit">
+              <Share2Icon />
+            </div>
+            <div className=" p-2.5 border rounded-full h-fit w-fit">
+              <Facebook />
+            </div>
+            <div className=" p-2.5 border rounded-full h-fit w-fit">
+              <X />
+            </div>
+          </div>
         </div>
+      </section>
+      <TextImage
+        subtitle="Quality Promise"
+        title="Built to Last, Designed to Inspire"
+        message="Behind every piece of furniture lies our commitment to excellence. We source only the finest materials from sustainable suppliers and employ traditional techniques refined over generations."
+        btn="Explore"
+        imageleft
+        image1="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_8_curves-dining-table-ri-200014-side-chair-delaware-sfeer_672x.jpg?v=1749029618"
+        image2="https://gain-demo-furniture.myshopify.com/cdn/shop/files/Web_Test-SW-MP-TABLE-Masterpiece-dining-tables-swatchset_2_c0f55a85-771b-4f5d-af8c-af2a6ae0fa76_912x.jpg?v=1747306695"
+      />
+      <section className=" text-start space-y-5 p-5 md:p-10">
+        <h3 className="text-4xl">Recommendations</h3>
+        <Swiper
+          effect={"coverflow"}
+          grabCursor
+          slidesPerView={2}
+          spaceBetween={20}
+          pagination
+          navigation
+          breakpoints={{
+            640: {
+              slidesPerView: 3,
+            },
+          }}
+          modules={[Pagination, Navigation]}
+          className="mySwiper_Cat_List pb-6!"
+          style={{
+            "--swiper-pagination-color": "black",
+          }}
+        >
+          {Array(4)
+            .fill(collectionsData)
+            .flat()
+            .map((list, index) => (
+              <SwiperSlide
+                key={index}
+                className="productlist text-black space-y-2.5 group cursor-pointer"
+              >
+                <div className=" relative overflow-hidden">
+                  <Link to="/product">
+                    <img
+                      src={list.image}
+                      className="w-full h-full block rounded"
+                    />
+                    <img
+                      src={list.hoverimage}
+                      className="w-full h-full block rounded absolute inset-0 duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105"
+                    />
+                    {/* sale */}
+                    {list.pricecompare && (
+                      <div className=" absolute inset-0 left-2.5 top-2.5">
+                        <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
+                          {getDiscount(list.price, list.pricecompare)}% sale
+                        </div>
+                      </div>
+                    )}
+                  </Link>
+                  {/* Eye */}
+                  <EyeView className="bottom-auto top-2.5 " bgblack />
+                </div>
+                <Link to="/product">
+                  <div className="text-start flex gap-2 py-2.5">
+                    {list.colors?.length &&
+                      list.colors?.map((e, index) => (
+                        <div
+                          key={index}
+                          className="rounded-full w-2.5 h-2.5"
+                          style={{ background: e }}
+                        />
+                      ))}
+                  </div>
+                  <div className=" text-sm font-bold flex justify-between capitalize text-start">
+                    {list.label}
+                  </div>
+                  <div className="flex text-sm justify-between">
+                    <span
+                      className={` font-semibold ${
+                        list?.pricecompare && "text-red-500"
+                      }`}
+                    >
+                      {list.price}{" "}
+                      <span className="text-gray-500 line-through">
+                        {list?.pricecompare}
+                      </span>
+                    </span>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
+        </Swiper>
       </section>
     </main>
   );

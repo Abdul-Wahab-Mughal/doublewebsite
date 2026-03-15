@@ -47,7 +47,16 @@ export default function Home() {
         <ProductList
           collectionsData={{ onsale: chairsLists, bestsellers: storageLists }}
         />
-        <TextImage />
+        <TextImage
+          subtitle="Made by Deco"
+          title="In-House"
+          message="
+            Crafted in our own workshops using reclaimed teak and durable metal.
+            Honest materials, timeless style — built to last."
+          btn="View More"
+          image1="https://gain-demo-furniture.myshopify.com/cdn/shop/files/MA_940346_Einstein_dining_table-ML_749533_Bloom_bench-ML_749515_Bloom_side_chair-ML_461107_Baba_sf1_DTP_2ded81e4-9341-430e-a41f-4cdb4416da03_456x.webp?v=1749535587"
+          image2="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_4_ti-428126-cabinet-beam-large-sfeer-1_c5be6687-6830-4858-88a0-ed6c91676b0b_620x.jpg?v=1749448842"
+        />
         <BestSellerTab />
         <TwoImage />
         <FooterBannar />
