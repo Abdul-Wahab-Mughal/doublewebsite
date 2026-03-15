@@ -1,4 +1,11 @@
-import { BadgePercent, Circle, Heart, ShoppingCartIcon, X } from "lucide-react";
+import {
+  BadgePercent,
+  Circle,
+  Heart,
+  MoveRight,
+  ShoppingCartIcon,
+  X,
+} from "lucide-react";
 import React from "react";
 
 const collectionsData = [
@@ -133,7 +140,12 @@ export default function Product() {
           </div>
           {/* Description */}
           <div className="py-2.5 border-y border-gray-200">
-            <div className=" uppercase underline">Description</div>
+            <div className=" uppercase underline flex gap-5 group cursor-pointer">
+              Description{" "}
+              <div className="w-0 group-hover:w-full overflow-hidden duration-1000">
+                <MoveRight size={25}/>
+              </div>
+            </div>
             {/* open Description */}
             <div
               className=" group bg-amber-100"
