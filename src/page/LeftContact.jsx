@@ -73,7 +73,7 @@ export default function LeftContact() {
             </ul>
 
             <Link
-              className="bg-(--btn) text-white px-10 py-2 cursor-pointer max-md:hidden flex items-center gap-2 hover:bg-(--btn)/75 w-fit"
+              className="bg-(--btn) text-white px-10 py-2 cursor-pointer flex items-center gap-2 hover:bg-(--btn)/75 w-fit"
               to="/klant-worden"
             >
               Klant Worden

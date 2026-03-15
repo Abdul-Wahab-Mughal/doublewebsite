@@ -10,9 +10,9 @@ export default function KlantenkaartAanvragen() {
         <img
           src="https://www.sligro.nl/klant-worden/klantenkaart/_jcr_content/root/content/teaser.coreimg.85.1920.jpeg/1721295400566/sligro-klantenpas.jpeg"
           alt=""
-          className="h-75 object-cover w-full z-10"
+          className="h-40 md:h-75 object-cover w-full z-10"
         />
-        <div className=" w-187.5 p-5 space-y-5 -mt-30 pt-20 pb-10 bg-white z-20 relative text-start">
+        <div className=" max-w-187.5 p-5 space-y-5 md:-mt-30 md:pt-20 pb-10 bg-white z-20 relative text-start">
           <h2 className="text-3xl">Klantenkaart aanvragen</h2>
           <p className=" text-sm max-w-175 m-auto">
             Vul onderstaand formulier in om je Sligro-klantenkaart aan te
@@ -21,7 +21,7 @@ export default function KlantenkaartAanvragen() {
         </div>
       </section>
       {/*  */}
-      <section className="p-10 pt-5 bg-gray-100 text-start space-y-5">
+      <section className="p-5 md:p-10 pt-5 bg-gray-100 text-start space-y-5">
         {/* 1 */}
         <div className=" shadow p-5 bg-white space-y-2.5">
           <div className=" uppercase text-xl">1. Organisatiegegevens</div>

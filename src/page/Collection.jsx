@@ -24,7 +24,7 @@ export default function Collection() {
   };
 
   return (
-    <main className="bg-white text-black min-h-screen pt-26">
+    <main className="bg-white text-black min-h-screen pt-30">
       <section className=" max-h-screen w-full rounded-tr-[250px] rounded-bl-[250px] overflow-hidden relative">
         <img
           src="https://gain-demo-furniture.myshopify.com/cdn/shop/collections/banner-coffee-tables_3000x.png?v=1749727762"

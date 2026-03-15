@@ -14,7 +14,7 @@ export default function KlantWorden() {
           alt=""
           className="h-75 object-cover w-full z-10"
         />
-        <div className=" max-w-187.5 m-auto p-5 space-y-5 -mt-30 pt-10 bg-white z-20 relative">
+        <div className=" max-w-187.5 m-auto p-5 space-y-5 md:-mt-30 md:pt-10 bg-white z-20 relative">
           <p>Welkom in de wereld van food</p>
           <h2 className="text-3xl">Klant worden bij Sligro</h2>
           <p className=" text-sm max-w-175 m-auto">
@@ -31,15 +31,15 @@ export default function KlantWorden() {
         </div>
       </section>
       {/*  */}
-      <section className="p-10 relative">
-        <div className=" z-0 h-62.5 pl-52">
+      <section className=" p-5 mdp-10 relative">
+        <div className=" z-0 h-62.5 md:pl-52">
           <img
             src="https://www.sligro.nl/klant-worden/_jcr_content/root/content/faq_container_copy/container/teaser_copy.coreimg.85.1920.jpeg/1757583154359/welkomstcadeau-krat-met-plank-liggend-lr.jpeg"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
-        <div className=" absolute top-1/2 -translate-y-1/2 flex flex-col z-10 bg-white w-125 p-5 h-fit space-y-5 text-start">
+        <div className=" md:absolute md:top-1/2 md:-translate-y-1/2 flex flex-col z-10 bg-white max-w-125 py-5 md:p-5 h-fit space-y-5 md:text-start">
           <h4 className="text-xl">Kies jouw gratis welkomstcadeau</h4>
           <p>
             Word je klant bij Sligro, dan ontvang je een gratis welkomstcadeau.
@@ -49,12 +49,12 @@ export default function KlantWorden() {
         </div>
       </section>
       {/*  */}
-      <section className="p-10 text-start space-y-5">
+      <section className="p-5 md:p-10 text-start space-y-5">
         <h3 className="text-3xl">Veelgestelde vragen</h3>
         <details className=" shadow group">
           <summary className="p-5 text-base flex justify-between cursor-pointer font-bold">
             Hoe word ik klant bij Sligro?
-            <ChevronDown className="group-open:rotate-180" />
+            <ChevronDown className="group-open:rotate-180 min-w-10" />
           </summary>
           <div className="text-sm space-y-2.5 px-5 pb-5">
             <p>
@@ -84,7 +84,7 @@ export default function KlantWorden() {
           <summary className="p-5 text-base flex justify-between cursor-pointer font-bold">
             Kan ik ook klant worden als mijn bedrijf in het buitenland is
             gevestigd?
-            <ChevronDown className="group-open:rotate-180" />
+            <ChevronDown className="group-open:rotate-180 min-w-10" />
           </summary>
           <div className="text-sm space-y-2.5 px-5 pb-5">
             <p>
@@ -119,7 +119,7 @@ export default function KlantWorden() {
         <details className=" shadow group">
           <summary className="p-5 text-base flex justify-between cursor-pointer font-bold">
             Hoe vraag ik een klantenkaart aan voor mijn tweede bedrijf?
-            <ChevronDown className="group-open:rotate-180" />
+            <ChevronDown className="group-open:rotate-180 min-w-10" />
           </summary>
           <div className="text-sm space-y-2.5 px-5 pb-5">
             <p>
@@ -139,7 +139,7 @@ export default function KlantWorden() {
         <details className=" shadow group">
           <summary className="p-5 text-base flex justify-between cursor-pointer font-bold">
             Kan ik bezorgklant worden bij Sligro?
-            <ChevronDown className="group-open:rotate-180" />
+            <ChevronDown className="group-open:rotate-180 min-w-10" />
           </summary>
           <div className="text-sm space-y-2.5 px-5 pb-5">
             <p>
