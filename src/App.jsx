@@ -1,18 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import "./App.css";
+import viteLogo from "/vite.svg";
+import reactLogo from "./assets/react.svg";
+
 import Header from "./components/Header";
+import ScrollToTop from "./components/ui/ScrollToTop";
+
 import Home from "./page/Home";
+import Product from "./page/Product";
+import NotFound from "./page/NotFound";
+import HomeRight from "./page/HomeRight";
 import LeftContact from "./page/LeftContact";
-import RightHome from "./page/RightHome";
 import Inkooplijst from "./page/Inkooplijst";
 import KlantWorden from "./page/KlantWorden";
+import CollectionLeft from "./page/CollectionLeft";
+import CollectionRight from "./page/CollectionRight";
 import KlantenkaartAanvragen from "./page/KlantenkaartAanvragen";
-import Collection from "./page/Collection";
-import Product from "./page/Product";
-// import NotFound from "./page/NotFound";
 
 function App() {
   const [home, setHome] = useState(true);
@@ -20,10 +25,11 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         {/* Header */}
         <Header home={home} setHome={setHome} />
         <Routes>
-          <Route path="/" element={home ? <Home /> : <RightHome />} />
+          <Route path="/" element={home ? <Home /> : <HomeRight />} />
           <Route path="/contact" element={<LeftContact />} />
           <Route path="/inkooplijst" element={<Inkooplijst />} />
 
@@ -33,12 +39,16 @@ function App() {
             element={<KlantenkaartAanvragen />}
           />
 
-          <Route path="/collection" element={<Collection />} />
-          <Route path="/product" element={<Product />} />
+          {/* Yape's */}
+          <Route path="/y/collection" element={<CollectionLeft />} />
+          <Route path="/y/product" element={<Product />} />
+
+          {/* zita's */}
+          <Route path="/z/collection" element={<CollectionRight />} />
 
           {/* <Route path="/h" element={<RightHome />} /> */}
           {/*  */}
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {/* <Footer navLinks={navLinks} /> */}
       </Router>

@@ -48,7 +48,7 @@ export default function BestSellerTab() {
                     : " opacity-0 invisible absolute"
                 } bg-white rounded-bl-4xl md:rounded-bl-[100px] rounded-tr-4xl md:rounded-tr-[150px] w-full duration-500`}
               >
-                <Link to="/collection">
+                <Link to="/y/collection">
                   <div className=" relative group rounded-bl-4xl md:rounded-bl-[150px] rounded-tr-4xl md:rounded-tr-[150px] overflow-hidden">
                     <img
                       src={data.image}

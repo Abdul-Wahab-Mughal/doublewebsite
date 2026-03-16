@@ -25,9 +25,9 @@ export default function Button({
             {children}
           </span>
           {/* animate */}
-          <span className=" absolute left-0 translate-y-20 group-hover:-translate-y-20 duration-750">
+          <span className=" absolute left-0 translate-y-20 group-hover:-translate-y-20 duration-750 w-full">
             <svg
-              className={`icon text-(--btn2) ${animatColor}`}
+              className={`icon text-(--btn2) w-full ${animatColor}`}
               aria-hidden="true"
               focusable="false"
               width="500"

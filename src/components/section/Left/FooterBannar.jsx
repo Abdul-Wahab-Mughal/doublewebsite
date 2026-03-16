@@ -32,7 +32,7 @@ export default function FooterBannar() {
 
           <button className=" m-auto p-2.5 border rounded-full cursor-pointer group">
             <Link
-              to="/collection"
+              to="/y/collection"
               className=" w-40 h-40 border rounded-full flex justify-center items-center overflow-hidden relative"
             >
               <span className="group-hover:text-black duration-2500">

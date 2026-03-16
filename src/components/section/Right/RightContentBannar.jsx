@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function RightContentBannar() {
+export default function RightContentBannar({ className, to }) {
   const sectionRef = useRef(null);
   const overlayRef = useRef(null);
   const textRef = useRef(null);
@@ -67,7 +67,7 @@ export default function RightContentBannar() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen bg-black overflow-hidden"
+      className={`relative h-screen bg-black overflow-hidden ${className}`}
     >
       <div className="sticky top-0 h-screen flex items-center px-6 md:px-16">
         {/* Image */}
@@ -97,7 +97,7 @@ export default function RightContentBannar() {
           </h2>
 
           <a
-            href="#"
+            href={to}
             className="mt-6 inline-block border-b border-white py-1 transition uppercase"
           >
             Our Story

@@ -1,9 +1,9 @@
 import { X } from "lucide-react";
 import React, { useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import ButtonLeft from "./ButtonLeft";
+import Button from "./Button";
 
-export default function ProductBox({ onClick }) {
+export default function ProductBox({ onClick, className }) {
   const boxRef = useRef();
   const [selectedSetQuantity, setSelectedSetQuantity] = useState("2");
   const [selectedStyle, setSelectedStyle] = useState("2");
@@ -20,7 +20,7 @@ export default function ProductBox({ onClick }) {
     >
       <div
         ref={boxRef}
-        className="bg-white max-w-[70%] max-h-[90%] rounded-tl-4xl rounded-br-4xl text-black relative overflow-hidden p-5"
+        className={`bg-white max-w-[70%] max-h-[90%] rounded-tl-4xl rounded-br-4xl text-black relative overflow-hidden p-5 ${className}`}
       >
         <X
           onClick={onClick}
@@ -134,15 +134,15 @@ export default function ProductBox({ onClick }) {
             <div> 890,00</div>
             {/* Button */}
             <div>
-              <ButtonLeft className="w-full">Add to cart</ButtonLeft>
-              <ButtonLeft
+              <Button className="w-full">Add to cart</Button>
+              <Button
                 className="w-full bg-black mt-2.5!"
                 animatColor="text-white"
               >
                 <span className="text-white group-hover:text-black duration-500">
                   Buy it now
                 </span>
-              </ButtonLeft>
+              </Button>
             </div>
           </div>
         </div>

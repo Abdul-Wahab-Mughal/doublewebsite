@@ -24,7 +24,7 @@ export default function RightImageBannar() {
         </div>
       </div>
       <div className="absolute bottom-10">
-        <Button animatColor="!text-[var(--btn)]">shop now</Button>
+        <Button animatColor="!text-[var(--btn)]" to="/z/collection">shop now</Button>
       </div>
     </section>
   );

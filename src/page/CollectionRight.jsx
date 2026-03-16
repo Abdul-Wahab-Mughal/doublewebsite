@@ -2,6 +2,7 @@ import { ChevronDown } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import EyeView from "../components/ui/EyeView";
+import SaleBadge from "../components/ui/saleBadge";
 
 const collectionsData = [
   {
@@ -16,18 +17,12 @@ const collectionsData = [
   },
 ];
 
-export default function Collection() {
-  const getDiscount = (price, compare) => {
-    const current = parseFloat(price.replace("€", ""));
-    const original = parseFloat(compare.replace("€", ""));
-    return Math.round(((original - current) / original) * 100);
-  };
-
+export default function CollectionRight() {
   return (
     <main className="bg-white text-black min-h-screen pt-30">
-      <section className=" max-h-screen w-full rounded-tr-[250px] rounded-bl-[250px] overflow-hidden relative">
+      <section className=" max-h-screen w-full overflow-hidden relative">
         <img
-          src="https://gain-demo-furniture.myshopify.com/cdn/shop/collections/banner-coffee-tables_3000x.png?v=1749727762"
+          src="https://mart-harmonia.myshopify.com/cdn/shop/files/hero_image.jpg?v=1753944100&width=3600"
           alt=""
           className=" w-full h-full object-cover"
         />
@@ -40,7 +35,7 @@ export default function Collection() {
         </div>
       </section>
       {/*  */}
-      <section className="px-10 py-20">
+      <section className="px-5 md:px-10 py-10 md:py-20">
         <h2 className="text-5xl text-start mb-10">Coffee Tables</h2>
         <div className="flex">
           {/* left */}
@@ -234,14 +229,17 @@ export default function Collection() {
             </div>
           </div>
           {/* Right */}
-          <div className="w-full grid grid-cols-4 gap-5">
+          <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-5">
             {Array(5)
               .fill(collectionsData)
               .flat()
               .map((list, index) => (
-                <div className="productlist text-black space-y-2.5 group cursor-pointer">
+                <div
+                  key={index}
+                  className="productlist text-black space-y-2.5 group cursor-pointer"
+                >
                   <div className=" relative overflow-hidden">
-                    <Link to="/product">
+                    <Link to="/y/product">
                       <img
                         src={list.image}
                         className="w-full h-full block rounded"
@@ -252,17 +250,16 @@ export default function Collection() {
                       />
                       {/* sale */}
                       {list.pricecompare && (
-                        <div className=" absolute inset-0 left-2.5 top-2.5">
-                          <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
-                            {getDiscount(list.price, list.pricecompare)}% sale
-                          </div>
-                        </div>
+                        <SaleBadge
+                          price={list.price}
+                          compare={list.pricecompare}
+                        />
                       )}
                     </Link>
                     {/* Eye */}
                     <EyeView className="bottom-auto top-2.5 " bgblack />
                   </div>
-                  <Link to="/product">
+                  <Link to="/y/product">
                     <div className="text-start flex gap-2 py-2.5">
                       {list.colors?.length &&
                         list.colors?.map((e, index) => (

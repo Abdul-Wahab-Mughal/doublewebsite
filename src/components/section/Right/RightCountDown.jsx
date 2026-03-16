@@ -52,7 +52,7 @@ export default function RightCountDown() {
           </div>
           <p className=" text-lg">Final Hours to Save Big</p>
 
-          <Button className="m-auto" animatColor="!text-[var(--btn)]">
+          <Button className="m-auto" animatColor="!text-[var(--btn)]" to="/z/collection">
             shop now
           </Button>
         </div>

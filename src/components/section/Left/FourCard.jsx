@@ -54,7 +54,7 @@ export default function FourCard() {
               <div className="fourcard w-1/2 h-full md:h-fit md:mt-auto lg:flex-1 flex items-end pr-2.5 md:p-2.5">
                 <div className="text-start flex flex-col gap-3 w-full h-full">
                   <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full overflow-hidden group">
-                    <Link to="/collection">
+                    <Link to="/y/collection">
                       <img
                         src={card}
                         alt=""
@@ -63,7 +63,7 @@ export default function FourCard() {
                     </Link>
                     <EyeView className=" bottom-0 right-16" />
                   </div>
-                  <Link className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
+                  <Link to="/y/collection" className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
                     Bistro Side Table
                   </Link>
                   <p className="text-black text-xs">
@@ -75,7 +75,7 @@ export default function FourCard() {
               <div className="fourcard w-1/2 lg:flex-3 pl-2.5 md:p-2.5">
                 <div className="text-start flex flex-col gap-3">
                   <div className=" relative rounded-bl-[50px] md:rounded-bl-[125px] rounded-tr-[50px] md:rounded-tr-[125px] overflow-hidden group">
-                    <Link to="/collection">
+                    <Link to="/y/collection">
                       <img
                         src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_mp-204323-dresser-metropole-large-detail-2_60ebfdd6-299f-458a-8ce9-9ddd5c35786c.jpg?v=1749205903&width=695"
                         alt=""
@@ -84,7 +84,7 @@ export default function FourCard() {
                     </Link>
                     <EyeView />
                   </div>
-                  <Link className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
+                  <Link to="/y/collection" className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
                     Metropole Coffee Table
                   </Link>
                   <p className="text-black text-xs">
@@ -95,7 +95,7 @@ export default function FourCard() {
               <div className="fourcard w-1/2 lg:flex-2 flex items-center pr-2.5 md:p-2.5">
                 <div className="text-start flex flex-col gap-3">
                   <div className=" relative rounded-bl-[50px] md:rounded-bl-[125px] rounded-tr-[50px] md:rounded-tr-[125px] overflow-hidden lg:rounded-none group">
-                    <Link to="/collection">
+                    <Link to="/y/collection">
                       <img
                         src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/bookcase-cosmo-3d-3or-fix-4_1a0c3c68-420f-40e4-b769-817c65fbbf78.jpg?v=1748866654&width=405"
                         alt=""
@@ -104,7 +104,7 @@ export default function FourCard() {
                     </Link>
                     <EyeView />
                   </div>
-                  <Link className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
+                  <Link to="/y/collection" className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
                     Atlas Round Table
                   </Link>
                   <p className="text-black text-xs">
@@ -115,7 +115,7 @@ export default function FourCard() {
               <div className="fourcard w-1/2 lg:flex-1 pl-2.5 md:p-2.5">
                 <div className="text-start flex flex-col gap-3">
                   <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full group overflow-hidden">
-                    <Link to="/collection">
+                    <Link to="/y/collection">
                       <img
                         src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_bt-438125-cabinet-beam-small-detail.jpg?v=1747307880&width=260"
                         alt=""
@@ -124,7 +124,7 @@ export default function FourCard() {
                     </Link>
                     <EyeView className=" bottom-0 right-16" />
                   </div>
-                  <Link className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
+                  <Link to="/y/collection" className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
                     Cosmo Table Set
                   </Link>
                   <p className="text-black text-xs">
@@ -139,7 +139,7 @@ export default function FourCard() {
               <div className="fourcard w-1/2 h-full md:h-fit md:mt-auto lg:flex-1 flex items-end pr-2.5 md:p-2.5">
                 <div className="text-start flex flex-col gap-3 w-full h-full">
                   <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full overflow-hidden group">
-                    <Link to="/collection">
+                    <Link to="/y/collection">
                       <img
                         src={card}
                         alt=""
@@ -148,7 +148,7 @@ export default function FourCard() {
                     </Link>
                     <EyeView className=" bottom-0 right-16" />
                   </div>
-                  <Link className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
+                  <Link to="/y/collection" className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
                     Bistro Side Table
                   </Link>
                   <p className="text-black text-xs">
@@ -160,7 +160,7 @@ export default function FourCard() {
               <div className="fourcard w-1/2 lg:flex-3 pl-2.5 md:p-2.5">
                 <div className="text-start flex flex-col gap-3">
                   <div className=" relative rounded-bl-[50px] md:rounded-bl-[125px] rounded-tr-[50px] md:rounded-tr-[125px] overflow-hidden group">
-                    <Link to="/collection">
+                    <Link to="/y/collection">
                       <img
                         src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_mp-204323-dresser-metropole-large-detail-2_60ebfdd6-299f-458a-8ce9-9ddd5c35786c.jpg?v=1749205903&width=695"
                         alt=""
@@ -169,7 +169,7 @@ export default function FourCard() {
                     </Link>
                     <EyeView />
                   </div>
-                  <Link className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
+                  <Link to="/y/collection" className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
                     Metropole Coffee Table
                   </Link>
                   <p className="text-black text-xs">
@@ -180,7 +180,7 @@ export default function FourCard() {
               <div className="fourcard w-1/2 lg:flex-2 flex items-center pr-2.5 md:p-2.5">
                 <div className="text-start flex flex-col gap-3">
                   <div className=" relative rounded-bl-[50px] md:rounded-bl-[125px] rounded-tr-[50px] md:rounded-tr-[125px] overflow-hidden lg:rounded-none group">
-                    <Link to="/collection">
+                    <Link to="/y/collection">
                       <img
                         src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/bookcase-cosmo-3d-3or-fix-4_1a0c3c68-420f-40e4-b769-817c65fbbf78.jpg?v=1748866654&width=405"
                         alt=""
@@ -189,7 +189,7 @@ export default function FourCard() {
                     </Link>
                     <EyeView />
                   </div>
-                  <Link className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
+                  <Link to="/y/collection" className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
                     Atlas Round Table
                   </Link>
                   <p className="text-black text-xs">
@@ -200,7 +200,7 @@ export default function FourCard() {
               <div className="fourcard w-1/2 lg:flex-1 pl-2.5 md:p-2.5">
                 <div className="text-start flex flex-col gap-3">
                   <div className="lg:pb-[150%] relative rounded-[100px] md:rounded-full group overflow-hidden">
-                    <Link to="/collection">
+                    <Link to="/y/collection">
                       <img
                         src="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_5_bt-438125-cabinet-beam-small-detail.jpg?v=1747307880&width=260"
                         alt=""
@@ -209,7 +209,7 @@ export default function FourCard() {
                     </Link>
                     <EyeView className=" bottom-0 right-16" />
                   </div>
-                  <Link className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
+                  <Link to="/y/collection" className="text-black font-bold text-xl md:text-2xl lg:text-base leading-none">
                     Cosmo Table Set
                   </Link>
                   <p className="text-black text-xs">

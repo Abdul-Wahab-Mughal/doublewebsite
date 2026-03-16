@@ -11,6 +11,7 @@ import FollowUs from "../components/section/Left/FollowUs";
 import { Building, LucideLockKeyhole } from "lucide-react";
 import { Link } from "react-router-dom";
 import RightCategoriesList from "../components/section/Right/RightCategoriesList";
+import RightContentBannar from "../components/section/Right/RightContentBannar";
 
 const chairsLists = [
   {
@@ -57,12 +58,16 @@ export default function Home() {
           image1="https://gain-demo-furniture.myshopify.com/cdn/shop/files/MA_940346_Einstein_dining_table-ML_749533_Bloom_bench-ML_749515_Bloom_side_chair-ML_461107_Baba_sf1_DTP_2ded81e4-9341-430e-a41f-4cdb4416da03_456x.webp?v=1749535587"
           image2="https://gain-demo-furniture.myshopify.com/cdn/shop/files/image_4_ti-428126-cabinet-beam-large-sfeer-1_c5be6687-6830-4858-88a0-ed6c91676b0b_620x.jpg?v=1749448842"
         />
+        <RightContentBannar
+          className=" rounded-tr-4xl  md:rounded-tr-[250px] rounded-bl-4xl md:rounded-bl-[250px]"
+          to="/y/collection"
+        />
         <BestSellerTab />
         <TwoImage />
         <FooterBannar />
         <RightCategoriesList />
         <div className=" fixed bottom-5 left-1 bg-(--btn) w-fit p-2 rounded-xl z-50 h-fit cursor-pointer">
-          <Link to="/contact">
+          <Link to="/y/contact">
             <div className="flex gap-2.5 border-r-2 pr-2 border-yellow-500">
               <div className="flex items-end">
                 <Building />

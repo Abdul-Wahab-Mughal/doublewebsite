@@ -56,7 +56,7 @@ export default function TextImage({
           <div className=" text-4xl">{title}</div>
           <p className="lg:text-sm pt-5">{message}</p>
 
-          <Button to="/collection">{btn}</Button>
+          <Button to="/y/collection">{btn}</Button>
         </div>
         <div
           className={`w-full lg:w-[60%] flex gap-5 ${

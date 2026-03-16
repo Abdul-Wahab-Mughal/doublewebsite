@@ -111,7 +111,7 @@ const accessoriesLists = [
   },
 ];
 
-export default function RightHome() {
+export default function HomeRight() {
   return (
     <main id="righthome" className="bg-white pt-14">
       <RightBannar />
@@ -141,7 +141,7 @@ export default function RightHome() {
         subititle="Discover the newest pieces, fresh and ready to transform your space."
         collectionsData={{ trending: trendingLists }}
       />
-      <RightContentBannar />
+      <RightContentBannar to="z/collection" />
       <RightProductListSlide
         title="Crafted for Your Life"
         subititle="From modern minimalism to classic elegance, explore furniture that balances design with practicality."

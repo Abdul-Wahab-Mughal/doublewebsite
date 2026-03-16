@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EyeView from "../../ui/EyeView";
 import { Link } from "react-router-dom";
+import SaleBadge from "../../ui/saleBadge";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,12 +37,6 @@ export default function ProductList({ collectionsData }) {
 
     return () => ctx.revert();
   }, []);
-
-  const getDiscount = (price, compare) => {
-    const current = parseFloat(price.replace("€", ""));
-    const original = parseFloat(compare.replace("€", ""));
-    return Math.round(((original - current) / original) * 100);
-  };
 
   return (
     <section
@@ -104,7 +99,7 @@ export default function ProductList({ collectionsData }) {
                 className="productlist text-black space-y-2.5 group cursor-pointer"
               >
                 <div className=" relative overflow-hidden">
-                  <Link to="/product">
+                  <Link to="/y/product">
                     <img
                       src={list.image}
                       className="w-full h-full block rounded"
@@ -115,17 +110,16 @@ export default function ProductList({ collectionsData }) {
                     />
                     {/* sale */}
                     {list.pricecompare && (
-                      <div className=" absolute inset-0 left-2.5 top-2.5">
-                        <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
-                          {getDiscount(list.price, list.pricecompare)}% sale
-                        </div>
-                      </div>
+                      <SaleBadge
+                        price={list.price}
+                        compare={list.pricecompare}
+                      />
                     )}
                   </Link>
                   {/* Eye */}
                   <EyeView className="bottom-auto top-2.5 " bgblack />
                 </div>
-                <Link to="/product">
+                <Link to="/y/product">
                   <div className="text-start flex gap-2 py-2.5">
                     {list.colors?.length &&
                       list.colors?.map((e, index) => (

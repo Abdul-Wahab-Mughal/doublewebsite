@@ -1,8 +1,10 @@
 import {
   BadgePercent,
+  ChevronLeft,
   Circle,
-  Facebook,
+  FacebookIcon,
   Heart,
+  InstagramIcon,
   Minus,
   MoveRight,
   Plus,
@@ -11,11 +13,12 @@ import {
   X,
 } from "lucide-react";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import EyeView from "../components/ui/EyeView";
 import TextImage from "../components/section/Left/TextImage";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import SaleBadge from "../components/ui/saleBadge";
 
 const collectionsData = [
   {
@@ -31,16 +34,36 @@ const collectionsData = [
 ];
 export default function Product() {
   const [openDescription, setOpenDescription] = useState(false);
+  const navigate = useNavigate();
+  const [qty, setQty] = useState(1);
 
-  const getDiscount = (price, compare) => {
-    const current = parseFloat(price.replace("€", ""));
-    const original = parseFloat(compare.replace("€", ""));
-    return Math.round(((original - current) / original) * 100);
+  const decrease = () => qty > 1 && setQty(qty - 1);
+  const increase = () => setQty(qty + 1);
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: document.title,
+          url: window.location.href,
+        });
+      } catch (error) {
+        console.log("Share cancelled");
+      }
+    } else {
+      alert("Sharing not supported on this browser");
+    }
   };
 
   return (
     <main className=" bg-white text-black pt-30 min-h-screen">
-      <section className="p-5 md:p-10 grid md:grid-cols-2 gap-5 text-start">
+      <div className=" px-5 md:px-10 cursor-pointer w-fit">
+        <div className="flex items-center" onClick={() => navigate(-1)}>
+          <ChevronLeft />
+          Back
+        </div>
+      </div>
+      <section className="p-5 md:px-10 grid md:grid-cols-2 gap-5 text-start">
         {/* left */}
         <div className=" relative">
           <div className=" sticky top-0">
@@ -66,11 +89,6 @@ export default function Product() {
         </div>
         {/* Right */}
         <div className="space-y-2.5">
-          <div>
-            <span className="bg-red-500 text-white rounded-full py-1 px-2.5 text-sm">
-              SALE
-            </span>
-          </div>
           <h2 className=" text-3xl uppercase">Mini vacuum cleaner</h2>
           <p className=" underline">InnovaGoods</p>
           <div className=" uppercase grid grid-cols-2">
@@ -104,7 +122,7 @@ export default function Product() {
             </div>
           </div>
           <div className="flex gap-2.5">
-            <BadgePercent /> Special price for large quantites
+            <BadgePercent color="red" /> Special price for large quantites
           </div>
           {/* Special Price */}
           <div>
@@ -142,12 +160,13 @@ export default function Product() {
           {/* quantity */}
           <span>Units</span>
           <div className="flex gap-5 pt-5">
-            <div class="p-2.5 rounded-full border flex items-center gap-5">
+            <div className="p-2.5 rounded-full border flex items-center gap-5">
               <button
                 type="button"
                 aria-label="Decrease quantity for Round Charcuterie Board"
-                className=" disabled:text-gray-300"
-                disabled
+                className=" disabled:text-gray-300 cursor-pointer"
+                onClick={decrease}
+                disabled={qty === 1}
               >
                 <Minus />
               </button>
@@ -156,16 +175,19 @@ export default function Product() {
                 type="number"
                 name="quantity"
                 id="Quantity"
-                value="1"
+                value={qty}
                 min="1"
                 max="10"
                 step="1"
                 className=" w-10 text-center appearance-none"
+                disabled
               />
 
               <button
                 type="button"
                 aria-label="Increase quantity for Round Charcuterie Board"
+                className="cursor-pointer"
+                onClick={increase}
               >
                 <Plus />
               </button>
@@ -302,7 +324,7 @@ export default function Product() {
                   className="productlist text-black space-y-2.5 group cursor-pointer"
                 >
                   <div className=" relative overflow-hidden">
-                    <Link to="/product">
+                    <Link to="/y/product">
                       <img
                         src={list.image}
                         className="w-full h-full block rounded"
@@ -313,17 +335,16 @@ export default function Product() {
                       />
                       {/* sale */}
                       {list.pricecompare && (
-                        <div className=" absolute inset-0 left-2.5 top-2.5">
-                          <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
-                            {getDiscount(list.price, list.pricecompare)}% sale
-                          </div>
-                        </div>
+                        <SaleBadge
+                          price={list.price}
+                          compare={list.pricecompare}
+                        />
                       )}
                     </Link>
                     {/* Eye */}
                     <EyeView className="bottom-auto top-2.5 " bgblack />
                   </div>
-                  <Link to="/product">
+                  <Link to="/y/product">
                     <div className="text-start flex gap-2 py-2.5">
                       {list.colors?.length &&
                         list.colors?.map((e, index) => (
@@ -356,15 +377,22 @@ export default function Product() {
           {/* Share */}
           <div className=" flex gap-2.5 items-center py-10">
             <h3 className=" text-xl text-gray-500">Share:</h3>
-            <div className=" p-2.5 border rounded-full h-fit w-fit">
+            <div
+              className=" p-2.5 border rounded-full h-fit w-fit cursor-pointer"
+              onClick={handleShare}
+            >
               <Share2Icon />
             </div>
-            <div className=" p-2.5 border rounded-full h-fit w-fit">
-              <Facebook />
-            </div>
-            <div className=" p-2.5 border rounded-full h-fit w-fit">
-              <X />
-            </div>
+            <a href="https://facebook.com" target="_blank">
+              <div className=" p-2.5 border rounded-full h-fit w-fit">
+                <FacebookIcon />
+              </div>
+            </a>
+            <a href="https://Instagram.com" target="_blank">
+              <div className=" p-2.5 border rounded-full h-fit w-fit">
+                <InstagramIcon />
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -406,7 +434,7 @@ export default function Product() {
                 className="productlist text-black space-y-2.5 group cursor-pointer"
               >
                 <div className=" relative overflow-hidden">
-                  <Link to="/product">
+                  <Link to="/y/product">
                     <img
                       src={list.image}
                       className="w-full h-full block rounded"
@@ -417,17 +445,16 @@ export default function Product() {
                     />
                     {/* sale */}
                     {list.pricecompare && (
-                      <div className=" absolute inset-0 left-2.5 top-2.5">
-                        <div className=" text-start bg-red-700 w-fit text-xs py-0.5 px-2 rounded-full uppercase text-white">
-                          {getDiscount(list.price, list.pricecompare)}% sale
-                        </div>
-                      </div>
+                      <SaleBadge
+                        price={list.price}
+                        compare={list.pricecompare}
+                      />
                     )}
                   </Link>
                   {/* Eye */}
                   <EyeView className="bottom-auto top-2.5 " bgblack />
                 </div>
-                <Link to="/product">
+                <Link to="/y/product">
                   <div className="text-start flex gap-2 py-2.5">
                     {list.colors?.length &&
                       list.colors?.map((e, index) => (
